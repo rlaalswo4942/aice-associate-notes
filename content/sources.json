@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "sources": [
+    { "id": "S01", "kind": "official_exam", "organization": "KT AICE", "title": "AICE 공식 사이트 (시험 일정·접수·수험자 가이드·샘플 문항·학습과정)", "url": "https://aice.study/", "scope": "시험 일정, 응시 절차, 공식 학습과정, 부정행위 기준·허용 참조 문서" },
+    { "id": "S02", "kind": "official_exam", "organization": "KT AICE", "title": "AICE 시험 안내", "url": "https://aice.study/info/aice", "scope": "등급 구성, 독립 응시, 시험 형식(동적 페이지 — 문항 수·합격점은 직접 확인)" },
+    { "id": "S03", "kind": "official_registry", "organization": "한국직업능력연구원 민간자격정보서비스(PQI)", "title": "민간자격정보서비스 — AICE (등록번호 2022-004642)", "url": "https://www.pqi.or.kr/", "scope": "공인 민간자격 여부, 발급기관, 직무 내용, 연도별 취득률" },
+    { "id": "S04", "kind": "allowed_doc", "organization": "NumPy", "title": "NumPy Reference (시험 허용 문서)", "url": "https://numpy.org/doc/2.2/reference/index.html", "scope": "ndarray, shape, axis, 집계 함수" },
+    { "id": "S05", "kind": "allowed_doc", "organization": "pandas", "title": "pandas API Reference (시험 허용 문서)", "url": "https://pandas.pydata.org/docs/reference/index.html", "scope": "DataFrame, loc/iloc, groupby, merge, 결측 처리" },
+    { "id": "S06", "kind": "primary_technical", "organization": "pandas", "title": "pandas User Guide — Working with missing data", "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html", "scope": "isna, fillna, dropna" },
+    { "id": "S07", "kind": "primary_technical", "organization": "pandas", "title": "pandas.get_dummies", "url": "https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html", "scope": "범주형 → dummy/indicator 변수, drop_first, dummy_na" },
+    { "id": "S08", "kind": "allowed_doc", "organization": "Matplotlib", "title": "Matplotlib Gallery (시험 허용 문서)", "url": "https://matplotlib.org/stable/gallery/index.html", "scope": "히스토그램·산점도·박스플롯 등 기본 시각화" },
+    { "id": "S09", "kind": "allowed_doc", "organization": "Seaborn", "title": "Seaborn API (시험 허용 문서)", "url": "https://seaborn.pydata.org/api.html", "scope": "histplot, boxplot, heatmap 등 통계 시각화" },
+    { "id": "S10", "kind": "allowed_doc", "organization": "scikit-learn", "title": "scikit-learn API Reference (시험 허용 문서)", "url": "https://scikit-learn.org/stable/api/index.html", "scope": "분할·전처리·모델·평가 API 전체" },
+    { "id": "S11", "kind": "primary_technical", "organization": "scikit-learn", "title": "sklearn.model_selection.train_test_split", "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html", "scope": "test_size, random_state, shuffle, stratify" },
+    { "id": "S12", "kind": "primary_technical", "organization": "scikit-learn", "title": "sklearn.preprocessing.StandardScaler", "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html", "scope": "평균·표준편차 학습(fit) 후 변환(transform)" },
+    { "id": "S13", "kind": "primary_technical", "organization": "scikit-learn", "title": "Metrics and scoring: quantifying the quality of predictions", "url": "https://scikit-learn.org/stable/modules/model_evaluation.html", "scope": "회귀·분류 평가 지표" },
+    { "id": "S14", "kind": "primary_technical", "organization": "scikit-learn", "title": "Common pitfalls and recommended practices", "url": "https://scikit-learn.org/stable/common_pitfalls.html", "scope": "데이터 누수(Data leakage), 전처리 일관성" },
+    { "id": "S15", "kind": "allowed_doc", "organization": "TensorFlow", "title": "TensorFlow Python API (시험 허용 문서)", "url": "https://www.tensorflow.org/api_docs/python/tf", "scope": "tf.keras 모델·층·손실·옵티마이저" },
+    { "id": "S16", "kind": "primary_technical", "organization": "TensorFlow", "title": "The Sequential model (Keras guide)", "url": "https://www.tensorflow.org/guide/keras/sequential_model", "scope": "Sequential, Dense, compile, fit" },
+    { "id": "S17", "kind": "primary_technical", "organization": "TensorFlow", "title": "tf.keras.callbacks.EarlyStopping", "url": "https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping", "scope": "monitor, patience, restore_best_weights" },
+    { "id": "S18", "kind": "allowed_doc", "organization": "XGBoost", "title": "XGBoost — Using the Scikit-Learn Estimator Interface (시험 허용 문서)", "url": "https://xgboost.readthedocs.io/en/stable/python/sklearn_estimator.html", "scope": "XGBClassifier, XGBRegressor" },
+    { "id": "S19", "kind": "primary_technical", "organization": "scikit-learn", "title": "sklearn.metrics.confusion_matrix", "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html", "scope": "혼동행렬 배치(행=실제, 열=예측)" },
+    { "id": "S20", "kind": "official_law", "organization": "개인정보보호위원회", "title": "개인정보보호위원회", "url": "https://www.pipc.go.kr/np/", "scope": "안전성 확보조치, 가명정보 가이드라인" },
+    { "id": "S21", "kind": "official_law", "organization": "국가법령정보센터", "title": "개인정보 보호법", "url": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B2%95", "scope": "개인정보처리자의 안전조치 의무" },
+    { "id": "S22", "kind": "primary_technical", "organization": "pandas", "title": "pandas.DataFrame.groupby", "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html", "scope": "그룹별 집계" }
+  ]
+}

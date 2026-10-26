@@ -1,0 +1,493 @@
+{
+ "notice": "AICE Associate 형식(14문항 · 90분)을 본뜬 자체 제작 실습형 모의고사입니다. 배점은 사이트 자체 기준이며 공식 배점이 아닙니다. 데이터는 교재 U12 '모의고사 세 가지'에서 받으세요. Jupyter에서 90분 타이머를 맞추고 실제로 실행한 뒤 모범 답안과 비교해 스스로 채점합니다.",
+ "sets": [
+  {
+   "id": "A",
+   "name": "A · 통신서비스 이탈 예측 (분류)",
+   "items": [
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[4점] data/telecom_churn.csv를 읽어 df에 저장하고 shape를 출력하시오.",
+     "a": "import pandas as pd\ndf = pd.read_csv(\"telecom_churn.csv\")\nprint(df.shape)",
+     "pts": [
+      "pd.read_csv로 df 생성",
+      "df.shape 출력 (괄호 없음)"
+     ],
+     "ex": "결과는 (3000, 7)."
+    },
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[5점] 열별 dtype과 결측값 개수를 확인하시오.",
+     "a": "df.info()\nprint(df.isna().sum())",
+     "pts": [
+      "info()로 dtype·non-null 확인",
+      "isna().sum()으로 열별 결측 개수"
+     ],
+     "ex": "monthly_fee에만 결측 120개."
+    },
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[5점] churn의 클래스 비율을 계산하시오.",
+     "a": "print(df[\"churn\"].value_counts(normalize=True))",
+     "pts": [
+      "value_counts(normalize=True) 사용"
+     ],
+     "ex": "0이 약 71%, 1이 약 29% — 불균형 데이터이므로 stratify와 F1이 필요합니다."
+    },
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[6점] contract별 평균 monthly_fee를 구하시오.",
+     "a": "print(df.groupby(\"contract\")[\"monthly_fee\"].mean())",
+     "pts": [
+      "groupby('contract')",
+      "['monthly_fee'].mean()"
+     ],
+     "ex": "groupby는 결측을 빼고 평균을 냅니다."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] 범주형 열 contract, payment를 one-hot 변환하시오. (drop_first=True, 0/1 정수)",
+     "a": "df = pd.get_dummies(df, columns=[\"contract\", \"payment\"], drop_first=True, dtype=int)",
+     "pts": [
+      "pd.get_dummies에 columns 지정",
+      "drop_first=True",
+      "결과를 df에 다시 대입"
+     ],
+     "ex": "dummy 변환은 데이터 통계를 쓰지 않으므로 split 전에 해도 누수가 아닙니다. OneHotEncoder도 정답."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[5점] churn을 target(y)으로, 나머지를 feature(X)로 분리하시오.",
+     "a": "X = df.drop(columns=\"churn\")\ny = df[\"churn\"]",
+     "pts": [
+      "X에서 churn 제거",
+      "y = df['churn']"
+     ],
+     "ex": "target이 X에 남으면 누수입니다."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[7점] X, y를 8:2로 나누시오. random_state=42, 클래스 비율 유지.",
+     "a": "from sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42, stratify=y)",
+     "pts": [
+      "test_size=0.2",
+      "random_state=42",
+      "stratify=y",
+      "반환 순서 X_train, X_test, y_train, y_test"
+     ],
+     "ex": "분류 문제이므로 stratify=y."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] monthly_fee 결측을 X_train의 중앙값으로 train·test 모두 채우시오.",
+     "a": "med = X_train[\"monthly_fee\"].median()\nX_train = X_train.copy(); X_test = X_test.copy()\nX_train[\"monthly_fee\"] = X_train[\"monthly_fee\"].fillna(med)\nX_test[\"monthly_fee\"] = X_test[\"monthly_fee\"].fillna(med)",
+     "pts": [
+      "중앙값을 X_train으로만 계산",
+      "같은 값으로 X_test도 채움",
+      "fillna 결과를 다시 대입"
+     ],
+     "ex": "대표 누수 함정: 전체 df의 median을 쓰면 test 정보가 섞입니다."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[8점] 수치열 age, monthly_fee, tenure_months, support_calls를 StandardScaler로 변환하시오.",
+     "a": "from sklearn.preprocessing import StandardScaler\nnum_cols = [\"age\", \"monthly_fee\", \"tenure_months\", \"support_calls\"]\nscaler = StandardScaler()\nX_train[num_cols] = scaler.fit_transform(X_train[num_cols])\nX_test[num_cols] = scaler.transform(X_test[num_cols])",
+     "pts": [
+      "X_train으로 fit (fit_transform)",
+      "X_test에는 transform만",
+      "dummy 열은 scaling하지 않아도 됨"
+     ],
+     "ex": "test에 fit_transform을 쓰면 오답."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[8점] LogisticRegression 모델 lr을 학습하시오. (max_iter=1000)",
+     "a": "from sklearn.linear_model import LogisticRegression\nlr = LogisticRegression(max_iter=1000)\nlr.fit(X_train, y_train)",
+     "pts": [
+      "LogisticRegression 생성",
+      "X_train, y_train으로 fit"
+     ],
+     "ex": "max_iter는 수렴 경고 방지."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[8점] RandomForestClassifier 모델 rf를 같은 데이터로 학습하시오. (n_estimators=200, random_state=42)",
+     "a": "from sklearn.ensemble import RandomForestClassifier\nrf = RandomForestClassifier(n_estimators=200, random_state=42)\nrf.fit(X_train, y_train)",
+     "pts": [
+      "같은 X_train, y_train 사용",
+      "n_estimators=200, random_state=42"
+     ],
+     "ex": "트리 모델은 scaling이 필요 없지만 같은 입력을 써도 무방합니다."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[10점] 두 모델의 test Accuracy와 F1을 출력해 비교하시오.",
+     "a": "from sklearn.metrics import accuracy_score, f1_score\nfor name, m in [(\"lr\", lr), (\"rf\", rf)]:\n    pred = m.predict(X_test)\n    print(name, accuracy_score(y_test, pred), f1_score(y_test, pred))",
+     "pts": [
+      "predict(X_test)",
+      "accuracy_score(y_test, pred)",
+      "f1_score(y_test, pred)",
+      "인자 순서 (y_true, y_pred)"
+     ],
+     "ex": "불균형 데이터이므로 F1을 함께 봅니다."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[10점] F1이 더 높은 모델의 confusion matrix를 만들고 TN, FP, FN, TP를 꺼내시오.",
+     "a": "from sklearn.metrics import confusion_matrix\ncm = confusion_matrix(y_test, lr.predict(X_test))\ntn, fp, fn, tp = cm.ravel()\nprint(cm)",
+     "pts": [
+      "confusion_matrix(y_test, pred)",
+      "ravel() 순서 tn, fp, fn, tp",
+      "행 = 실제, 열 = 예측"
+     ],
+     "ex": "이 데이터에서는 보통 LogisticRegression의 F1이 더 높습니다(약 0.53)."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[10점] 최종 모델을 고르고 근거를 주석으로 쓰시오.",
+     "a": "# 이탈 고객이 약 29%인 불균형 데이터이므로 Accuracy보다 F1을 기준으로 했다.\n# 같은 test set에서 F1이 더 높은 LogisticRegression을 선택한다.\n# 이탈 고객을 놓치는(FN) 비용이 크므로 Recall도 함께 확인하고, 필요하면 threshold를 낮춘다.",
+     "pts": [
+      "metric 선택 이유(불균형 → F1/Recall)",
+      "같은 test set 비교 결과",
+      "업무 비용(FN) 언급"
+     ],
+     "ex": "정답은 하나가 아닙니다. 지표와 업무 비용을 근거로 쓰면 됩니다."
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "B · 주택가격 예측 (회귀)",
+   "items": [
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[4점] data/house_price.csv를 읽어 df에 저장하시오.",
+     "a": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv(\"house_price.csv\")\nprint(df.shape)",
+     "pts": [
+      "pd.read_csv"
+     ],
+     "ex": "(1200, 5)"
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[5점] target인 price의 기술통계를 확인하시오.",
+     "a": "print(df[\"price\"].describe())",
+     "pts": [
+      "describe()"
+     ],
+     "ex": "평균·표준편차·사분위수로 분포를 파악합니다."
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[6점] 열별 결측률을 계산하시오.",
+     "a": "print(df.isna().mean())",
+     "pts": [
+      "isna().mean() (개수가 아니라 비율)"
+     ],
+     "ex": "area 결측률 5%."
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[6점] area와 price의 관계를 산점도로 그리시오.",
+     "a": "import matplotlib.pyplot as plt\nplt.scatter(df[\"area\"], df[\"price\"], s=5)\nplt.xlabel(\"area\"); plt.ylabel(\"price\")\nplt.show()",
+     "pts": [
+      "plt.scatter 또는 sns.scatterplot",
+      "x = area, y = price"
+     ],
+     "ex": "두 수치 변수의 관계 → 산점도."
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[7점] price의 IQR 이상치 하한·상한을 계산하시오.",
+     "a": "q1 = df[\"price\"].quantile(0.25)\nq3 = df[\"price\"].quantile(0.75)\niqr = q3 - q1\nlow, high = q1 - 1.5 * iqr, q3 + 1.5 * iqr\nprint(low, high)",
+     "pts": [
+      "quantile(0.25), quantile(0.75)",
+      "IQR = Q3 − Q1",
+      "하한 Q1 − 1.5·IQR, 상한 Q3 + 1.5·IQR"
+     ],
+     "ex": "박스플롯 수염 끝과 같은 값입니다."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] 범주형 region을 one-hot 변환하시오. (0/1 정수)",
+     "a": "df = pd.get_dummies(df, columns=[\"region\"], dtype=int)",
+     "pts": [
+      "get_dummies(columns=['region'])",
+      "결과를 다시 대입"
+     ],
+     "ex": "drop_first=True도 정답."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[5점] price를 y, 나머지를 X로 분리하시오.",
+     "a": "X = df.drop(columns=\"price\")\ny = df[\"price\"]",
+     "pts": [
+      "X에서 price 제거"
+     ],
+     "ex": "회귀 target은 연속값."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[6점] 80/20으로 나누시오. random_state=42.",
+     "a": "from sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)",
+     "pts": [
+      "test_size=0.2",
+      "random_state=42",
+      "회귀이므로 stratify 없음"
+     ],
+     "ex": "stratify는 분류용입니다."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[8점] area 결측을 X_train 중앙값으로 채운 뒤 수치열(area, rooms, age)에 StandardScaler를 적용하시오.",
+     "a": "from sklearn.preprocessing import StandardScaler\nmed = X_train[\"area\"].median()\nX_train = X_train.fillna({\"area\": med})\nX_test = X_test.fillna({\"area\": med})\nnum_cols = [\"area\", \"rooms\", \"age\"]\nscaler = StandardScaler().fit(X_train[num_cols])\nX_train[num_cols] = scaler.transform(X_train[num_cols])\nX_test[num_cols] = scaler.transform(X_test[num_cols])",
+     "pts": [
+      "median은 X_train 기준",
+      "scaler는 X_train으로 fit",
+      "X_test는 transform만"
+     ],
+     "ex": "StandardScaler는 NaN을 그대로 두므로 결측을 먼저 채웁니다."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[8점] baseline으로 LinearRegression 모델 lin을 학습하시오.",
+     "a": "from sklearn.linear_model import LinearRegression\nlin = LinearRegression().fit(X_train, y_train)",
+     "pts": [
+      "LinearRegression().fit(X_train, y_train)"
+     ],
+     "ex": "선형 모델을 먼저 기준선으로 둡니다."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[8점] RandomForestRegressor 모델 rfr을 학습하시오. (n_estimators=300, random_state=42)",
+     "a": "from sklearn.ensemble import RandomForestRegressor\nrfr = RandomForestRegressor(n_estimators=300, random_state=42).fit(X_train, y_train)",
+     "pts": [
+      "회귀용 Regressor 클래스 사용",
+      "random_state=42"
+     ],
+     "ex": "Classifier를 쓰면 오답."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[8점] 두 모델의 test MAE를 계산하시오.",
+     "a": "from sklearn.metrics import mean_absolute_error\nfor name, m in [(\"lin\", lin), (\"rfr\", rfr)]:\n    print(name, mean_absolute_error(y_test, m.predict(X_test)))",
+     "pts": [
+      "mean_absolute_error(y_test, pred)"
+     ],
+     "ex": "MAE는 낮을수록 좋습니다."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[10점] 두 모델의 test RMSE를 계산하시오.",
+     "a": "from sklearn.metrics import mean_squared_error\nfor name, m in [(\"lin\", lin), (\"rfr\", rfr)]:\n    print(name, np.sqrt(mean_squared_error(y_test, m.predict(X_test))))",
+     "pts": [
+      "mean_squared_error에 np.sqrt",
+      "같은 X_test로 비교"
+     ],
+     "ex": "큰 오차에 민감한 지표. 최신 버전에는 root_mean_squared_error도 있지만 시험 환경 버전에 따라 없을 수 있습니다."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[12점] 최종 모델을 고르고 근거를 주석으로 쓰시오.",
+     "a": "# 회귀 문제이므로 accuracy/F1이 아니라 MAE·RMSE로 비교했다.\n# 같은 test set에서 MAE와 RMSE가 모두 더 낮은 LinearRegression을 선택한다.\n# 데이터가 선형 관계에 가까워 복잡한 RandomForest가 오히려 불리했다.",
+     "pts": [
+      "회귀 지표로 판단",
+      "같은 test set 비교",
+      "낮을수록 좋은 지표임을 앎"
+     ],
+     "ex": "분류 지표(accuracy/F1)를 쓰면 이 세트의 대표 함정에 걸린 것입니다."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "C · 미세먼지 수준 예측 (회귀 + DNN)",
+   "items": [
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[4점] data/air_quality.csv를 읽고 구조(shape, info)를 확인하시오.",
+     "a": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv(\"air_quality.csv\")\nprint(df.shape)\ndf.info()",
+     "pts": [
+      "read_csv",
+      "shape와 info()"
+     ],
+     "ex": "(2000, 6). date는 문자열(object/str)."
+    },
+    {
+     "t": "code",
+     "topic": "U05",
+     "q": "[5점] 열별 결측 개수를 확인하시오.",
+     "a": "print(df.isna().sum())",
+     "pts": [
+      "isna().sum()"
+     ],
+     "ex": "temp 80, humidity 50."
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[5점] pm25의 분포를 히스토그램으로 그리시오.",
+     "a": "import seaborn as sns\nimport matplotlib.pyplot as plt\nsns.histplot(data=df, x=\"pm25\")\nplt.show()",
+     "pts": [
+      "sns.histplot 또는 plt.hist"
+     ],
+     "ex": "한 수치 변수의 분포 → 히스토그램."
+    },
+    {
+     "t": "code",
+     "topic": "U06",
+     "q": "[6점] 수치열의 상관계수 행렬을 구하시오.",
+     "a": "print(df.corr(numeric_only=True))",
+     "pts": [
+      "corr()",
+      "문자열 열 처리(numeric_only=True 또는 수치열만 선택)"
+     ],
+     "ex": "pm25와 wind는 음의 상관."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] date에서 월(month)을 꺼내 새 열을 만들고 date 열은 삭제하시오.",
+     "a": "df[\"month\"] = pd.to_datetime(df[\"date\"]).dt.month\ndf = df.drop(columns=\"date\")",
+     "pts": [
+      "pd.to_datetime",
+      ".dt.month",
+      "date 열 삭제"
+     ],
+     "ex": "계절 효과를 feature로 만드는 feature engineering."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] region을 one-hot 변환하시오.",
+     "a": "df = pd.get_dummies(df, columns=[\"region\"], dtype=int)",
+     "pts": [
+      "get_dummies"
+     ],
+     "ex": "OneHotEncoder도 정답."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[7점] pm25를 y로 두고 8:2로 나누시오. random_state=42.",
+     "a": "from sklearn.model_selection import train_test_split\nX = df.drop(columns=\"pm25\")\ny = df[\"pm25\"]\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)",
+     "pts": [
+      "X/y 분리",
+      "test_size=0.2, random_state=42"
+     ],
+     "ex": "회귀이므로 stratify 없음."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] temp, humidity 결측을 X_train 중앙값으로 채우시오.",
+     "a": "med = X_train[[\"temp\", \"humidity\"]].median()\nX_train = X_train.fillna(med)\nX_test = X_test.fillna(med)",
+     "pts": [
+      "median을 X_train으로 계산",
+      "train·test 모두 같은 값으로"
+     ],
+     "ex": "중앙값은 이상치에 덜 민감합니다(robust)."
+    },
+    {
+     "t": "code",
+     "topic": "U07",
+     "q": "[7점] X_train으로 StandardScaler를 학습해 X_train_s, X_test_s를 만드시오.",
+     "a": "from sklearn.preprocessing import StandardScaler\nscaler = StandardScaler().fit(X_train)\nX_train_s = scaler.transform(X_train)\nX_test_s = scaler.transform(X_test)",
+     "pts": [
+      "train-only fit",
+      "test는 transform만"
+     ],
+     "ex": "DNN 학습을 안정시킵니다."
+    },
+    {
+     "t": "code",
+     "topic": "U08",
+     "q": "[8점] XGBRegressor 모델 xgb를 학습하시오. (n_estimators=300, learning_rate=0.05, random_state=42)",
+     "a": "from xgboost import XGBRegressor\nxgb = XGBRegressor(n_estimators=300, learning_rate=0.05, random_state=42)\nxgb.fit(X_train, y_train)",
+     "pts": [
+      "XGBRegressor (회귀)",
+      "fit(X_train, y_train)"
+     ],
+     "ex": "트리 모델이라 scaling 없이 X_train을 써도 됩니다. RandomForestRegressor도 허용."
+    },
+    {
+     "t": "code",
+     "topic": "U09",
+     "q": "[8점] 은닉층 2개(32, 16, relu)와 회귀 출력층을 가진 DNN 모델 dnn을 만드시오.",
+     "a": "import tensorflow as tf\ntf.random.set_seed(42)\ndnn = tf.keras.Sequential([\n    tf.keras.Input(shape=(X_train_s.shape[1],)),\n    tf.keras.layers.Dense(32, activation=\"relu\"),\n    tf.keras.layers.Dense(16, activation=\"relu\"),\n    tf.keras.layers.Dense(1)\n])",
+     "pts": [
+      "Sequential",
+      "Dense(32, relu), Dense(16, relu)",
+      "출력층 Dense(1) — activation 없음"
+     ],
+     "ex": "회귀 출력에 sigmoid를 쓰면 0~1로 묶여 오답."
+    },
+    {
+     "t": "code",
+     "topic": "U09",
+     "q": "[8점] dnn을 compile하고 EarlyStopping(val_loss, patience=10)을 걸어 학습하시오.",
+     "a": "dnn.compile(optimizer=\"adam\", loss=\"mse\", metrics=[\"mae\"])\nearly = tf.keras.callbacks.EarlyStopping(monitor=\"val_loss\", patience=10, restore_best_weights=True)\nhistory = dnn.fit(X_train_s, y_train, epochs=300, batch_size=32,\n                  validation_split=0.2, callbacks=[early], verbose=0)",
+     "pts": [
+      "loss='mse' (회귀 loss)",
+      "validation_split",
+      "callbacks=[EarlyStopping]"
+     ],
+     "ex": "binary_crossentropy를 쓰면 오답."
+    },
+    {
+     "t": "code",
+     "topic": "U10",
+     "q": "[10점] xgb와 dnn의 test RMSE를 비교하시오.",
+     "a": "from sklearn.metrics import mean_squared_error\nrmse_xgb = np.sqrt(mean_squared_error(y_test, xgb.predict(X_test)))\nrmse_dnn = np.sqrt(mean_squared_error(y_test, dnn.predict(X_test_s, verbose=0).ravel()))\nprint(rmse_xgb, rmse_dnn)",
+     "pts": [
+      "같은 y_test로 비교",
+      "dnn에는 scaling된 X_test_s",
+      "np.sqrt(MSE)"
+     ],
+     "ex": "dnn.predict 결과는 (n, 1) 모양이라 ravel()로 펴면 안전합니다."
+    },
+    {
+     "t": "code",
+     "topic": "U09",
+     "q": "[11점] 학습 곡선으로 과적합 여부를 확인하고 개선안을 주석으로 쓰시오.",
+     "a": "import matplotlib.pyplot as plt\nplt.plot(history.history[\"loss\"], label=\"train\")\nplt.plot(history.history[\"val_loss\"], label=\"val\")\nplt.legend(); plt.show()\n# train loss는 줄어드는데 val loss가 다시 오르면 과적합이다.\n# 개선: EarlyStopping(이미 적용), Dropout 추가, 층·노드 수 줄이기, 데이터 추가.",
+     "pts": [
+      "history.history['loss'], ['val_loss'] 시각화",
+      "과적합 판단 기준 서술",
+      "개선안 1개 이상"
+     ],
+     "ex": "validation curve와 early stopping이 핵심."
+    }
+   ]
+  }
+ ]
+}

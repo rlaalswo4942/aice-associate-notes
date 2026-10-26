@@ -1,0 +1,2810 @@
+{
+ "notice": "공식 AICE 학습범위에 맞춰 새로 만든 예상문제입니다. 실제 기출문제가 아닙니다.",
+ "version": "1.0",
+ "questions": [
+  {
+   "id": "Q001",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "리스트 x = [10, 20, 30]의 마지막 원소를 얻는 표현은?",
+   "choices": [
+    "x[len(x)]",
+    "x[-1]",
+    "x[last]",
+    "x[3]"
+   ],
+   "answerIndex": 1,
+   "explanation": "음수 인덱스 -1은 뒤에서 첫 번째 원소입니다. x[3]·x[len(x)]는 IndexError.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q002",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "range(5)가 만드는 정수는?",
+   "choices": [
+    "1, 2, 3, 4",
+    "0, 1, 2, 3, 4, 5",
+    "1, 2, 3, 4, 5",
+    "0, 1, 2, 3, 4"
+   ],
+   "answerIndex": 3,
+   "explanation": "range(n)은 0부터 n-1까지 n개입니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q003",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "dict d에서 키 'age'의 값을 얻는 표현은?",
+   "choices": [
+    "d.age",
+    "d[\"age\"]",
+    "d[age]",
+    "d(\"age\")"
+   ],
+   "answerIndex": 1,
+   "explanation": "dict는 대괄호에 키를 문자열로 넣습니다. 따옴표 없는 d[age]는 age라는 변수를 찾습니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q004",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "리스트의 길이를 구하는 함수는?",
+   "choices": [
+    "size()",
+    "count()",
+    "length()",
+    "len()"
+   ],
+   "answerIndex": 3,
+   "explanation": "len()은 문자열·리스트·dict 모두에 씁니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q005",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "Python에서 함수를 정의하는 키워드는?",
+   "choices": [
+    "lambda만 가능",
+    "def",
+    "function",
+    "func"
+   ],
+   "answerIndex": 1,
+   "explanation": "def 이름(인자): 형식으로 정의합니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q006",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "값이 10 이상인지 검사하는 연산자는?",
+   "choices": [
+    ">",
+    ">=",
+    "==",
+    "=>"
+   ],
+   "answerIndex": 1,
+   "explanation": "'이상'은 같은 값도 포함하므로 >= 입니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q007",
+   "topic": "U03",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "Python 기본 문법에서 두 조건을 모두 만족해야 할 때 쓰는 논리 연산자는?",
+   "choices": [
+    "&",
+    "with",
+    "&&",
+    "and"
+   ],
+   "answerIndex": 3,
+   "explanation": "Python은 and/or/not을 씁니다. pandas 조건 결합에서는 & 를 씁니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q008",
+   "topic": "U03",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "[x*2 for x in range(3)]의 결과는?",
+   "choices": [
+    "[0, 1, 2]",
+    "[0, 2, 4, 6]",
+    "[0, 2, 4]",
+    "[2, 4, 6]"
+   ],
+   "answerIndex": 2,
+   "explanation": "x = 0, 1, 2에 2를 곱합니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q009",
+   "topic": "U03",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "예외 처리의 기본 구문은?",
+   "choices": [
+    "try / except",
+    "for / break",
+    "catch / throw",
+    "if / else"
+   ],
+   "answerIndex": 0,
+   "explanation": "Python은 try 블록에서 에러가 나면 except 블록이 실행됩니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q010",
+   "topic": "U03",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "lambda의 주된 목적은?",
+   "choices": [
+    "클래스 정의",
+    "한 줄짜리 간단한 익명 함수 만들기",
+    "반복문 대체",
+    "모듈 불러오기"
+   ],
+   "answerIndex": 1,
+   "explanation": "df['col'].apply(lambda x: ...)처럼 다른 함수에 넘길 때 주로 씁니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q011",
+   "topic": "U04",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "NumPy를 불러오는 관용적인 별칭은?",
+   "choices": [
+    "import numpy as nm",
+    "import numpy as np",
+    "from numpy import *",
+    "import numpy as pd"
+   ],
+   "answerIndex": 1,
+   "explanation": "np가 표준 별칭입니다. pd는 pandas.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q012",
+   "topic": "U04",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "배열의 크기(각 차원의 길이)를 확인하는 속성은?",
+   "choices": [
+    "dim",
+    "len",
+    "shape",
+    "size()"
+   ],
+   "answerIndex": 2,
+   "explanation": "a.shape는 (행, 열) 같은 튜플을 돌려줍니다. 괄호 없이 씁니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q013",
+   "topic": "U04",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "배열의 평균을 구하는 NumPy 함수는?",
+   "choices": [
+    "np.average_all()",
+    "np.mid()",
+    "np.mean()",
+    "np.avg()"
+   ],
+   "answerIndex": 2,
+   "explanation": "np.mean(a) 또는 a.mean()",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q014",
+   "topic": "U04",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "배열의 최댓값을 구하는 함수는?",
+   "choices": [
+    "np.upper()",
+    "np.argmax()",
+    "np.top()",
+    "np.max()"
+   ],
+   "answerIndex": 3,
+   "explanation": "np.argmax()는 최댓값의 '위치'를 돌려줍니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q015",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "2차원 배열에서 axis=0으로 집계(sum 등)하면 결과는?",
+   "choices": [
+    "전체 합 하나",
+    "열마다 하나씩 (행축을 따라 집계)",
+    "행마다 하나씩",
+    "배열이 그대로"
+   ],
+   "answerIndex": 1,
+   "explanation": "axis=0은 위→아래로 접어 열별 결과가 나옵니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q016",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "a[a > 10]과 같은 선택 방식을 무엇이라 하는가?",
+   "choices": [
+    "Broadcasting",
+    "Reshape",
+    "Fancy slicing",
+    "Boolean indexing"
+   ],
+   "answerIndex": 3,
+   "explanation": "True/False 배열로 True 위치만 선택합니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q017",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "2차원 배열을 1차원으로 펴는 대표 메서드는?",
+   "choices": [
+    "squeeze(0)",
+    "reshape(2)",
+    "transpose()",
+    "flatten() 또는 ravel()"
+   ],
+   "answerIndex": 3,
+   "explanation": "flatten은 복사본, ravel은 가능하면 원본 공유.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q018",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "NaN이 섞인 배열에서 NaN을 빼고 평균을 구하는 함수는?",
+   "choices": [
+    "np.mean()",
+    "np.nanmean()",
+    "np.dropmean()",
+    "np.isnan()"
+   ],
+   "answerIndex": 1,
+   "explanation": "np.mean은 NaN이 하나라도 있으면 nan을 돌려줍니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q019",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "난수 seed(random_state)를 고정하는 목적은?",
+   "choices": [
+    "난수를 더 무작위로 만들기 위해",
+    "실행할 때마다 같은 결과를 얻어 실험을 재현하기 위해",
+    "메모리를 줄이기 위해",
+    "계산 속도를 높이기 위해"
+   ],
+   "answerIndex": 1,
+   "explanation": "같은 seed면 같은 난수가 나옵니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q020",
+   "topic": "U04",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "표준편차를 구하는 NumPy 함수는?",
+   "choices": [
+    "np.std()",
+    "np.dev()",
+    "np.sd()",
+    "np.var()"
+   ],
+   "answerIndex": 0,
+   "explanation": "np.var는 분산. np.std 기본값은 ddof=0(모집단).",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q021",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "CSV 파일을 DataFrame으로 읽는 함수는?",
+   "choices": [
+    "pd.read_csv()",
+    "pd.DataFrame.csv()",
+    "pd.open_csv()",
+    "pd.load()"
+   ],
+   "answerIndex": 0,
+   "explanation": "df = pd.read_csv('파일.csv')",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q022",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "DataFrame의 처음 5행을 확인하는 메서드는?",
+   "choices": [
+    "df.tail()",
+    "df.first()",
+    "df.head()",
+    "df.top()"
+   ],
+   "answerIndex": 2,
+   "explanation": "tail()은 마지막 5행입니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q023",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "DataFrame의 행·열 개수를 확인하는 것은?",
+   "choices": [
+    "df.count",
+    "df.size()",
+    "df.shape",
+    "len(df.columns)"
+   ],
+   "answerIndex": 2,
+   "explanation": "shape는 (행, 열) 튜플이며 괄호 없이 씁니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q024",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "열별 dtype과 non-null 개수를 한 번에 확인하는 메서드는?",
+   "choices": [
+    "df.values",
+    "df.describe()",
+    "df.dtypes()",
+    "df.info()"
+   ],
+   "answerIndex": 3,
+   "explanation": "info()의 non-null 개수로 결측을 알 수 있습니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q025",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "수치형 열의 기술통계(count·mean·std·사분위 등)를 보는 메서드는?",
+   "choices": [
+    "df.info()",
+    "df.describe()",
+    "df.stats()",
+    "df.summary()"
+   ],
+   "answerIndex": 1,
+   "explanation": "include='all'을 주면 범주형도 포함됩니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q026",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "'age' 열 하나를 선택하는 표현은?",
+   "choices": [
+    "df[[age]]",
+    "df(\"age\")",
+    "df.loc(\"age\")",
+    "df[\"age\"]"
+   ],
+   "answerIndex": 3,
+   "explanation": "df.age도 되지만 df['age']가 표준입니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q027",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "'age'와 'income' 두 열을 선택하는 표현은?",
+   "choices": [
+    "df(\"age\", \"income\")",
+    "df[\"age\"][\"income\"]",
+    "df[\"age\", \"income\"]",
+    "df[[\"age\", \"income\"]]"
+   ],
+   "answerIndex": 3,
+   "explanation": "여러 열은 리스트로 감싸 대괄호 두 겹입니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q028",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "label(인덱스 이름·열 이름) 기반으로 선택하는 인덱서는?",
+   "choices": [
+    "at_pos",
+    "iloc",
+    "loc",
+    "ix"
+   ],
+   "answerIndex": 2,
+   "explanation": "loc은 label 기반, 슬라이스 끝을 포함합니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q029",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "정수 위치 기반으로 선택하는 인덱서는?",
+   "choices": [
+    "loc",
+    "iloc",
+    "pos",
+    "index"
+   ],
+   "answerIndex": 1,
+   "explanation": "iloc은 0부터 세는 위치 기반, 슬라이스 끝 미포함.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q030",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "age가 30 이상인 행만 추출하는 표현은?",
+   "choices": [
+    "df[df[\"age\"] >= 30]",
+    "df[\"age\" >= 30]",
+    "df.loc[\"age\" >= 30]",
+    "df.filter(age >= 30)"
+   ],
+   "answerIndex": 0,
+   "explanation": "조건 Series(True/False)를 대괄호에 넣습니다. df.query('age >= 30')도 같습니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q031",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "열별 결측값 개수를 구하는 코드는?",
+   "choices": [
+    "df.isna().sum()",
+    "df.isna().count()",
+    "df.null()",
+    "df.dropna().sum()"
+   ],
+   "answerIndex": 0,
+   "explanation": "isna()는 결측이면 True, sum()은 True 개수.",
+   "sourceIds": [
+    "S06"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q032",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "중복 행 개수를 확인하는 코드는?",
+   "choices": [
+    "df.unique().sum()",
+    "df.drop_duplicates()",
+    "df.nunique()",
+    "df.duplicated().sum()"
+   ],
+   "answerIndex": 3,
+   "explanation": "drop_duplicates()는 중복을 지운 결과를 돌려줍니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q033",
+   "topic": "U05",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "범주별 빈도를 세는 메서드는?",
+   "choices": [
+    "count_values()",
+    "value_counts()",
+    "freq()",
+    "groupby()"
+   ],
+   "answerIndex": 1,
+   "explanation": "normalize=True면 비율이 나옵니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q034",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "범주별 평균을 구하는 방법은?",
+   "choices": [
+    "groupby(...).mean()",
+    "value_counts().mean()",
+    "sort_values().mean()",
+    "pivot(...).sum()"
+   ],
+   "answerIndex": 0,
+   "explanation": "df.groupby('contract')['fee'].mean()",
+   "sourceIds": [
+    "S22"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q035",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "두 표를 key 열 기준으로 결합하는 함수는?",
+   "choices": [
+    "pd.concat()",
+    "pd.stack()",
+    "pd.merge()",
+    "df.append()"
+   ],
+   "answerIndex": 2,
+   "explanation": "merge는 SQL JOIN처럼 key로 맞춥니다. concat은 축을 따라 이어 붙입니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q036",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "값을 오름차순으로 정렬하는 메서드는?",
+   "choices": [
+    "sort_values()",
+    "sort_index(ascending=False)",
+    "order()",
+    "rank()"
+   ],
+   "answerIndex": 0,
+   "explanation": "내림차순은 ascending=False.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q037",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "수치 변수 간 상관계수 행렬을 구하는 메서드는?",
+   "choices": [
+    "df.cov()",
+    "df.describe()",
+    "df.corr()",
+    "df.relation()"
+   ],
+   "answerIndex": 2,
+   "explanation": "pandas 2.0부터는 문자열 열이 있으면 numeric_only=True가 필요합니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q038",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "히스토그램의 주된 목적은?",
+   "choices": [
+    "두 변수의 관계 확인",
+    "범주별 비율 비교",
+    "수치 변수 하나의 분포 모양 파악",
+    "시간에 따른 추세"
+   ],
+   "answerIndex": 2,
+   "explanation": "값의 구간별 빈도를 막대로 보여 줍니다.",
+   "sourceIds": [
+    "S08",
+    "S09"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q039",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "박스플롯에서 얻는 핵심 정보는?",
+   "choices": [
+    "평균과 최빈값",
+    "상관계수",
+    "중앙값·사분위·이상치",
+    "결측 개수"
+   ],
+   "answerIndex": 2,
+   "explanation": "상자 = Q1~Q3, 가운데 선 = 중앙값, 수염 밖 점 = 이상치 후보.",
+   "sourceIds": [
+    "S09"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q040",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "산점도의 주된 목적은?",
+   "choices": [
+    "결측 위치 확인",
+    "한 변수의 분포",
+    "두 수치 변수의 관계 확인",
+    "범주별 개수 비교"
+   ],
+   "answerIndex": 2,
+   "explanation": "x축·y축에 두 변수를 놓고 점으로 찍습니다.",
+   "sourceIds": [
+    "S08"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q041",
+   "topic": "U07",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "결측값이 있는 행을 제거하는 메서드는?",
+   "choices": [
+    "remove_na()",
+    "isna()",
+    "fillna()",
+    "dropna()"
+   ],
+   "answerIndex": 3,
+   "explanation": "fillna는 대체, isna는 확인.",
+   "sourceIds": [
+    "S06"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q042",
+   "topic": "U07",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "결측값을 다른 값으로 채우는 메서드는?",
+   "choices": [
+    "dropna()",
+    "notna()",
+    "replace_na()",
+    "fillna()"
+   ],
+   "answerIndex": 3,
+   "explanation": "df['col'] = df['col'].fillna(값) 처럼 다시 대입합니다.",
+   "sourceIds": [
+    "S06"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q043",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "이상치가 있을 때 결측 대체에 평균보다 중앙값이 유리할 수 있는 이유는?",
+   "choices": [
+    "계산이 더 빠르기 때문",
+    "극단값의 영향을 덜 받기 때문",
+    "범주형에도 쓸 수 있기 때문",
+    "항상 평균보다 크기 때문"
+   ],
+   "answerIndex": 1,
+   "explanation": "평균은 극단값에 끌려가지만 중앙값은 순서상 가운데라 둔감합니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q044",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "범주형 변수를 dummy(0/1) 변수로 바꾸는 pandas 함수는?",
+   "choices": [
+    "pd.to_numeric()",
+    "pd.cut()",
+    "pd.factorize_all()",
+    "pd.get_dummies()"
+   ],
+   "answerIndex": 3,
+   "explanation": "drop_first, dummy_na, dtype 옵션이 있습니다.",
+   "sourceIds": [
+    "S07"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q045",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "One-hot encoding의 목적은?",
+   "choices": [
+    "이상치를 제거",
+    "값의 범위를 0~1로",
+    "결측을 채우기",
+    "범주를 0/1 indicator feature로 바꿔 모델이 쓸 수 있게"
+   ],
+   "answerIndex": 3,
+   "explanation": "순서가 없는 범주를 크기 순서로 오해하지 않게 합니다.",
+   "sourceIds": [
+    "S07"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q046",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "IQR의 정의는?",
+   "choices": [
+    "평균 − 중앙값",
+    "Q3 − Q1",
+    "Q3 + Q1",
+    "최댓값 − 최솟값"
+   ],
+   "answerIndex": 1,
+   "explanation": "사분위 범위 = 3사분위수 − 1사분위수.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q047",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "전형적인 IQR 이상치 하한은?",
+   "choices": [
+    "평균 − 1.5 × IQR",
+    "Q1 − IQR",
+    "Q1 − 1.5 × IQR",
+    "Q1 − 3 × IQR"
+   ],
+   "answerIndex": 2,
+   "explanation": "상한은 Q3 + 1.5 × IQR.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q048",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "전형적인 IQR 이상치 상한은?",
+   "choices": [
+    "Q3 + IQR",
+    "Q3 + 2 × IQR",
+    "중앙값 + 1.5 × IQR",
+    "Q3 + 1.5 × IQR"
+   ],
+   "answerIndex": 3,
+   "explanation": "하한은 Q1 − 1.5 × IQR.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q049",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "get_dummies에서 drop_first=True의 효과는?",
+   "choices": [
+    "결측 범주를 열로 추가",
+    "범주마다 첫 dummy 열 하나를 빼서 열 수를 줄임",
+    "첫 행을 삭제",
+    "첫 범주를 결측으로 바꿈"
+   ],
+   "answerIndex": 1,
+   "explanation": "K개 범주를 K−1개 열로 표현합니다(다중공선성 완화).",
+   "sourceIds": [
+    "S07"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q050",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "Target 정보를 이용해 Feature를 만들면 생기는 위험은?",
+   "choices": [
+    "Target leakage(데이터 누수)",
+    "과소적합",
+    "결측 증가",
+    "범주 폭증"
+   ],
+   "answerIndex": 0,
+   "explanation": "모델이 정답을 간접적으로 보게 되어 점수가 비정상적으로 높아집니다.",
+   "sourceIds": [
+    "S14"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q051",
+   "topic": "U02",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "X와 y가 일반적으로 뜻하는 것은?",
+   "choices": [
+    "X = train, y = test",
+    "X = Target, y = Features",
+    "X = Features(입력), y = Target(정답)",
+    "X = 행, y = 열"
+   ],
+   "answerIndex": 2,
+   "explanation": "X = df.drop(columns='target'), y = df['target']",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q052",
+   "topic": "U08",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "train/test 데이터를 나누는 scikit-learn 함수는?",
+   "choices": [
+    "split_data",
+    "KFold.split만 가능",
+    "train_test_split",
+    "cross_val_score"
+   ],
+   "answerIndex": 2,
+   "explanation": "from sklearn.model_selection import train_test_split",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q053",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "train_test_split에서 test_size=0.2의 의미는?",
+   "choices": [
+    "test를 2개로",
+    "전체의 20%를 test로",
+    "20행을 test로",
+    "train의 20%를 test로 복사"
+   ],
+   "answerIndex": 1,
+   "explanation": "8:2 분할입니다. 정수를 주면 행 개수입니다.",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q054",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "random_state를 지정하는 목적은?",
+   "choices": [
+    "데이터 섞기 방지",
+    "속도 향상",
+    "분할 결과를 고정해 재현성 확보",
+    "정확도 향상"
+   ],
+   "answerIndex": 2,
+   "explanation": "같은 값이면 같은 분할이 나옵니다.",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q055",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "stratify=y의 목적은?",
+   "choices": [
+    "train/test의 클래스 비율을 원본과 같게 유지",
+    "y를 scaling",
+    "y를 정렬",
+    "y의 결측 제거"
+   ],
+   "answerIndex": 0,
+   "explanation": "불균형 분류에서 특히 중요합니다.",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q056",
+   "topic": "U07",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "평균 0, 표준편차 1이 되도록 표준화하는 도구는?",
+   "choices": [
+    "MinMaxScaler",
+    "LabelEncoder",
+    "StandardScaler",
+    "Normalizer"
+   ],
+   "answerIndex": 2,
+   "explanation": "z = (x − mean) / std",
+   "sourceIds": [
+    "S12"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q057",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "MinMaxScaler의 핵심은?",
+   "choices": [
+    "로그 변환",
+    "평균 0 중심화",
+    "범주형 변환",
+    "최솟값·최댓값 기준으로 0~1 범위로 변환"
+   ],
+   "answerIndex": 3,
+   "explanation": "(x − min) / (max − min)",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q058",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "scaler를 split 전 전체 데이터에 fit하면 안 되는 이유는?",
+   "choices": [
+    "계산이 느려서",
+    "test 정보가 학습에 새어 들어가는 누수",
+    "scaler가 에러를 내서",
+    "train 데이터가 줄어서"
+   ],
+   "answerIndex": 1,
+   "explanation": "평균·표준편차에 test 값이 섞여 평가가 낙관적으로 됩니다.",
+   "sourceIds": [
+    "S12",
+    "S14"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q059",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "올바른 scaling 순서는?",
+   "choices": [
+    "split → train으로 fit → train/test에 transform",
+    "전체 fit → split → transform",
+    "train/test 각각 fit_transform",
+    "split → test로 fit → train transform"
+   ],
+   "answerIndex": 0,
+   "explanation": "test에는 transform만 합니다.",
+   "sourceIds": [
+    "S12",
+    "S14"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q060",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "OneHotEncoder에서 학습 때 없던 범주가 test에 나와도 에러를 내지 않게 하는 옵션은?",
+   "choices": [
+    "sparse_output=False",
+    "drop=\"first\"",
+    "handle_unknown=\"ignore\"",
+    "categories=\"auto\""
+   ],
+   "answerIndex": 2,
+   "explanation": "알 수 없는 범주는 모두 0으로 처리됩니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q061",
+   "topic": "U02",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "연속값을 예측하는 문제 유형은?",
+   "choices": [
+    "Classification(분류)",
+    "Encoding",
+    "Regression(회귀)",
+    "Clustering(군집)"
+   ],
+   "answerIndex": 2,
+   "explanation": "집값·농도·사용량 등.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q062",
+   "topic": "U08",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "선형회귀 대표 클래스는?",
+   "choices": [
+    "LogisticRegression",
+    "LinearClassifier",
+    "RegressionTree",
+    "LinearRegression"
+   ],
+   "answerIndex": 3,
+   "explanation": "from sklearn.linear_model import LinearRegression",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q063",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Decision Tree에 scaling이 필수가 아닌 이유는?",
+   "choices": [
+    "범주형만 받으므로",
+    "임계값으로 분할하므로 값의 단위가 결과를 바꾸지 않음",
+    "scaling하면 에러가 나므로",
+    "내부에서 자동으로 표준화하므로"
+   ],
+   "answerIndex": 1,
+   "explanation": "'몇보다 큰가'만 보기 때문입니다. 트리 앙상블·XGBoost도 같습니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q064",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Random Forest의 기본 아이디어는?",
+   "choices": [
+    "선형식에 sigmoid",
+    "트리 하나를 깊게",
+    "이전 트리의 오류를 순차 보완",
+    "여러 트리를 따로 학습해 투표·평균 (bagging 앙상블)"
+   ],
+   "answerIndex": 3,
+   "explanation": "순차 보완은 boosting입니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q065",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Boosting의 기본 아이디어는?",
+   "choices": [
+    "가장 좋은 모델 하나만 선택",
+    "여러 모델을 병렬로 학습해 투표",
+    "데이터를 표준화",
+    "이전 모델의 오류를 다음 모델이 순차적으로 보완"
+   ],
+   "answerIndex": 3,
+   "explanation": "XGBoost가 대표적입니다.",
+   "sourceIds": [
+    "S18"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q066",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "MAE의 의미는?",
+   "choices": [
+    "제곱오차의 평균",
+    "절대오차의 평균",
+    "오차의 최댓값",
+    "정답률"
+   ],
+   "answerIndex": 1,
+   "explanation": "mean(|y − ŷ|), target과 같은 단위.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q067",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "MSE의 특징은?",
+   "choices": [
+    "단위가 target과 같음",
+    "이상치에 둔감",
+    "큰 오차에 더 큰 벌점을 줌",
+    "높을수록 좋음"
+   ],
+   "answerIndex": 2,
+   "explanation": "오차를 제곱하므로 큰 오차가 크게 반영됩니다.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q068",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "RMSE의 단위가 target과 같은 이유는?",
+   "choices": [
+    "MSE에 제곱근을 씌우기 때문",
+    "표준화하기 때문",
+    "평균을 빼기 때문",
+    "절댓값을 쓰기 때문"
+   ],
+   "answerIndex": 0,
+   "explanation": "제곱 → 평균 → 제곱근.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q069",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "R²가 1에 가깝다는 것은 일반적으로?",
+   "choices": [
+    "오차가 큼",
+    "분류 정확도가 높음",
+    "과소적합",
+    "모델이 target 분산을 잘 설명함"
+   ],
+   "answerIndex": 3,
+   "explanation": "0이면 평균으로 찍은 수준, 음수도 가능합니다.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q070",
+   "topic": "U10",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "회귀 문제에 Accuracy를 쓰면 안 되는 이유는?",
+   "choices": [
+    "계산이 오래 걸려서",
+    "scikit-learn에 없어서",
+    "항상 1이 나와서",
+    "Accuracy는 분류 지표라 연속값 예측을 제대로 평가하지 못함"
+   ],
+   "answerIndex": 3,
+   "explanation": "회귀는 MAE·MSE·RMSE·R².",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q071",
+   "topic": "U08",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "이진분류 대표 모델 중 하나는?",
+   "choices": [
+    "KMeans",
+    "LinearRegression",
+    "PCA",
+    "LogisticRegression"
+   ],
+   "answerIndex": 3,
+   "explanation": "이름에 Regression이 있지만 분류 모델입니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q072",
+   "topic": "U10",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "분류에서 전체 중 맞힌 비율은?",
+   "choices": [
+    "Recall",
+    "R²",
+    "Precision",
+    "Accuracy"
+   ],
+   "answerIndex": 3,
+   "explanation": "(TP + TN) / 전체",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q073",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Precision의 식은?",
+   "choices": [
+    "TN / (TN + FP)",
+    "TP / (TP + FP)",
+    "(TP + TN) / 전체",
+    "TP / (TP + FN)"
+   ],
+   "answerIndex": 1,
+   "explanation": "양성이라고 예측한 것 중 진짜 양성.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q074",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Recall의 식은?",
+   "choices": [
+    "FP / (FP + TN)",
+    "TN / (TN + FN)",
+    "TP / (TP + FP)",
+    "TP / (TP + FN)"
+   ],
+   "answerIndex": 3,
+   "explanation": "실제 양성 중 찾아낸 비율.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q075",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "F1은 무엇의 조화평균인가?",
+   "choices": [
+    "TP와 TN",
+    "Accuracy와 Recall",
+    "Precision과 Recall",
+    "MAE와 RMSE"
+   ],
+   "answerIndex": 2,
+   "explanation": "F1 = 2PR / (P + R)",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q076",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "환자를 놓치는 비용이 큰 질병 진단에서 우선할 지표는?",
+   "choices": [
+    "Precision",
+    "Recall",
+    "Accuracy",
+    "R²"
+   ],
+   "answerIndex": 1,
+   "explanation": "FN(놓침)을 줄여야 하므로 Recall.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q077",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "정상 메일을 스팸으로 잘못 분류하는 비용이 큰 스팸 필터에서 중요한 지표는?",
+   "choices": [
+    "Precision",
+    "Recall",
+    "Specificity만",
+    "MAE"
+   ],
+   "answerIndex": 0,
+   "explanation": "FP(오탐)를 줄여야 하므로 Precision.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q078",
+   "topic": "U10",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "불균형 데이터에서 Accuracy만 보면 위험한 이유는?",
+   "choices": [
+    "Recall과 항상 같아서",
+    "계산이 불가능해서",
+    "항상 낮게 나와서",
+    "다수 클래스만 맞혀도 높게 나올 수 있어서"
+   ],
+   "answerIndex": 3,
+   "explanation": "양성 5%면 전부 음성이라 해도 95%.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q079",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "혼동행렬의 4요소는?",
+   "choices": [
+    "Train, Valid, Test, All",
+    "P, R, F1, Acc",
+    "TP, TN, FP, FN",
+    "MAE, MSE, RMSE, R²"
+   ],
+   "answerIndex": 2,
+   "explanation": "scikit-learn은 행 = 실제, 열 = 예측.",
+   "sourceIds": [
+    "S19"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q080",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "클래스별 확률을 예측하는 메서드는?",
+   "choices": [
+    "predict()",
+    "decision()",
+    "predict_proba()",
+    "score()"
+   ],
+   "answerIndex": 2,
+   "explanation": "[:, 1]이 양성 확률.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q081",
+   "topic": "U09",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "Keras에서 층을 순서대로 쌓는 모델 클래스는?",
+   "choices": [
+    "Sequential",
+    "Linear",
+    "Stack",
+    "Pipeline"
+   ],
+   "answerIndex": 0,
+   "explanation": "tf.keras.Sequential([...])",
+   "sourceIds": [
+    "S16"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q082",
+   "topic": "U09",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "완전연결층(fully connected layer)은?",
+   "choices": [
+    "Conv2D",
+    "Flatten",
+    "Dense",
+    "Dropout"
+   ],
+   "answerIndex": 2,
+   "explanation": "tf.keras.layers.Dense(units, activation=...)",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q083",
+   "topic": "U09",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "은닉층에 가장 흔히 쓰는 activation은?",
+   "choices": [
+    "linear",
+    "softmax",
+    "ReLU",
+    "sigmoid"
+   ],
+   "answerIndex": 2,
+   "explanation": "음수는 0, 양수는 그대로.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q084",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "이진분류 출력층의 activation은?",
+   "choices": [
+    "softmax",
+    "sigmoid",
+    "relu",
+    "tanh"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dense(1, activation='sigmoid') → 0~1 확률.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q085",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "다중분류 출력층의 activation은?",
+   "choices": [
+    "sigmoid",
+    "softmax",
+    "linear",
+    "relu"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dense(K, activation='softmax') → 합이 1인 확률.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q086",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "이진분류의 대표 loss는?",
+   "choices": [
+    "categorical_crossentropy",
+    "mse",
+    "mae",
+    "binary_crossentropy"
+   ],
+   "answerIndex": 3,
+   "explanation": "sigmoid 출력과 짝입니다.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q087",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "epoch의 의미는?",
+   "choices": [
+    "한 번 가중치 갱신에 쓰는 샘플 수",
+    "학습률",
+    "전체 train 데이터를 한 번 학습하는 주기",
+    "층의 개수"
+   ],
+   "answerIndex": 2,
+   "explanation": "epochs=20이면 전체를 20번 반복.",
+   "sourceIds": [
+    "S16"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q088",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "batch_size의 의미는?",
+   "choices": [
+    "은닉층 노드 수",
+    "전체 반복 횟수",
+    "한 번 가중치를 갱신할 때 쓰는 샘플 수",
+    "검증 데이터 비율"
+   ],
+   "answerIndex": 2,
+   "explanation": "데이터 1000개, batch 100이면 1 epoch에 10번 갱신.",
+   "sourceIds": [
+    "S16"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q089",
+   "topic": "U09",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "train loss는 계속 감소하는데 validation loss가 증가한다. 어떤 현상인가?",
+   "choices": [
+    "Data leakage",
+    "Overfitting(과적합)",
+    "Underfitting(과소적합)",
+    "정상 수렴"
+   ],
+   "answerIndex": 1,
+   "explanation": "train을 외우기 시작한 신호입니다.",
+   "sourceIds": [
+    "S17"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q090",
+   "topic": "U09",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "EarlyStopping의 목적은?",
+   "choices": [
+    "층을 자동 추가",
+    "검증 성능이 나아지지 않으면 학습을 멈춰 과적합 완화",
+    "학습률을 키우기",
+    "데이터 증강"
+   ],
+   "answerIndex": 1,
+   "explanation": "monitor='val_loss', patience, restore_best_weights=True",
+   "sourceIds": [
+    "S17"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q091",
+   "topic": "U08",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "모델을 학습시키는 메서드는?",
+   "choices": [
+    "fit()",
+    "learn()",
+    "train()",
+    "run()"
+   ],
+   "answerIndex": 0,
+   "explanation": "model.fit(X_train, y_train)",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q092",
+   "topic": "U08",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "학습된 모델로 예측하는 메서드는?",
+   "choices": [
+    "transform()",
+    "guess()",
+    "predict()",
+    "forecast()"
+   ],
+   "answerIndex": 2,
+   "explanation": "pred = model.predict(X_test)",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q093",
+   "topic": "U10",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "두 모델을 비교할 때 같은 test set이 중요한 이유는?",
+   "choices": [
+    "공정한 비교를 위해",
+    "메모리 때문에",
+    "속도 때문에",
+    "test set이 하나뿐이어야 해서"
+   ],
+   "answerIndex": 0,
+   "explanation": "split이 다르면 점수 차이가 데이터 운인지 모델 차이인지 알 수 없습니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q094",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Cross Validation의 목적은?",
+   "choices": [
+    "scaling 대체",
+    "test 데이터를 늘림",
+    "학습 속도 향상",
+    "데이터 분할 운에 따른 성능 변동을 줄임"
+   ],
+   "answerIndex": 3,
+   "explanation": "여러 번 나눠 평균 성능을 봅니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q095",
+   "topic": "U02",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "과적합(Overfitting)이란?",
+   "choices": [
+    "train에는 좋으나 처음 보는 데이터 성능이 낮음",
+    "데이터가 너무 많음",
+    "test만 높음",
+    "train도 test도 모두 낮음"
+   ],
+   "answerIndex": 0,
+   "explanation": "문제집 답을 외운 상태.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q096",
+   "topic": "U02",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "과소적합(Underfitting)이란?",
+   "choices": [
+    "train 자체도 충분히 학습하지 못함",
+    "누수가 생김",
+    "train만 아주 높음",
+    "test가 train보다 높음"
+   ],
+   "answerIndex": 0,
+   "explanation": "모델이 너무 단순하거나 학습이 부족합니다.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q097",
+   "topic": "U10",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "분류 threshold를 낮추면 일반적으로 Recall은?",
+   "choices": [
+    "증가하는 경향",
+    "항상 0",
+    "변하지 않음",
+    "감소하는 경향"
+   ],
+   "answerIndex": 0,
+   "explanation": "양성 예측이 늘어나 실제 양성을 더 많이 잡습니다.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q098",
+   "topic": "U10",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "분류 threshold를 낮추면 FP는 보통?",
+   "choices": [
+    "항상 0",
+    "변하지 않음",
+    "감소하는 경향",
+    "증가하는 경향"
+   ],
+   "answerIndex": 3,
+   "explanation": "음성까지 양성으로 예측하는 경우가 늘어납니다.",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q099",
+   "topic": "U08",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "hyperparameter와 parameter의 차이는?",
+   "choices": [
+    "학습 전에 사람이 설정 / 학습으로 데이터에서 추정",
+    "test로 정함 / train으로 정함",
+    "둘 다 같은 말",
+    "학습으로 추정 / 사람이 설정"
+   ],
+   "answerIndex": 0,
+   "explanation": "max_depth는 하이퍼파라미터, 회귀 계수는 파라미터.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q100",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "test 데이터 점수를 보며 hyperparameter를 계속 고르면 생기는 문제는?",
+   "choices": [
+    "test에 과적합되어 실제 성능을 과대평가",
+    "데이터가 줄어듦",
+    "학습이 안 됨",
+    "과소적합"
+   ],
+   "answerIndex": 0,
+   "explanation": "하이퍼파라미터는 train(교차검증) 안에서 고릅니다.",
+   "sourceIds": [
+    "S14"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q101",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "Associate 시험 중 일반 Google 검색이 가능한가?",
+   "choices": [
+    "가능",
+    "시험 후반 30분만 가능",
+    "불가",
+    "감독관 허락 시 가능"
+   ],
+   "answerIndex": 2,
+   "explanation": "지정 7개 공식 문서만 볼 수 있습니다.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q102",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "시험 중 ChatGPT 사용이 가능한가?",
+   "choices": [
+    "코드 확인용으로만 가능",
+    "무료 버전만 가능",
+    "불가",
+    "가능"
+   ],
+   "answerIndex": 2,
+   "explanation": "생성형 AI는 금지입니다.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q103",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "scikit-learn 공식 문서는 시험 중 볼 수 있는가?",
+   "choices": [
+    "시험 화면에서 제공되는 지정 링크로 가능",
+    "불가",
+    "한국어 번역본만 가능",
+    "인쇄본만 가능"
+   ],
+   "answerIndex": 0,
+   "explanation": "허용 7개 문서 중 하나입니다.",
+   "sourceIds": [
+    "S01",
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q104",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "개인 노션 메모를 시험 중 볼 수 있는가?",
+   "choices": [
+    "한 페이지까지 가능",
+    "불가",
+    "가능",
+    "미리 등록하면 가능"
+   ],
+   "answerIndex": 1,
+   "explanation": "개인 메모·도서·SNS·메신저 모두 금지.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q105",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "듀얼 모니터를 쓸 수 있는가?",
+   "choices": [
+    "노트북 화면만 추가 가능",
+    "세로 모니터만 가능",
+    "가능",
+    "불가"
+   ],
+   "answerIndex": 3,
+   "explanation": "시험 환경 가이드상 금지입니다.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q106",
+   "topic": "U12",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "API 문서에서 가장 먼저 볼 항목은?",
+   "choices": [
+    "목차의 첫 장",
+    "페이지 맨 아래 라이선스",
+    "릴리스 노트",
+    "클래스·함수 signature와 Parameters"
+   ],
+   "answerIndex": 3,
+   "explanation": "인자 이름과 기본값을 확인한 뒤 Examples를 응용합니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q107",
+   "topic": "U01",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "라이브러리 버전 차이를 주의해야 하는 이유는?",
+   "choices": [
+    "버전이 높을수록 느려서",
+    "시험 점수가 달라져서",
+    "버전마다 API·인자가 다를 수 있어서",
+    "낮은 버전은 실행이 안 되어서"
+   ],
+   "answerIndex": 2,
+   "explanation": "허용 문서 버전과 실제 실행 환경 버전이 다를 수 있습니다.",
+   "sourceIds": [
+    "S04"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q108",
+   "topic": "U13",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "개인정보를 외부 AI API에 불필요하게 보내면 안 되는 이유는?",
+   "choices": [
+    "모델 성능이 떨어져서",
+    "개인정보 최소처리 원칙과 안전조치 의무에 어긋나고 유출 위험이 생김",
+    "API가 느려져서",
+    "비용이 비싸서"
+   ],
+   "answerIndex": 1,
+   "explanation": "필요한 열만, 식별자는 제거·가명처리합니다.",
+   "sourceIds": [
+    "S20",
+    "S21"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q109",
+   "topic": "U13",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "공개 데이터라도 라이선스를 확인해야 하는 이유는?",
+   "choices": [
+    "공개 데이터는 모두 불법이라서",
+    "재배포·변형·상업적 이용 권한이 라이선스마다 다를 수 있어서",
+    "형식이 달라서",
+    "용량이 커서"
+   ],
+   "answerIndex": 1,
+   "explanation": "공개 ≠ 자유 이용.",
+   "sourceIds": [],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q110",
+   "topic": "U12",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "시험장에서 가장 중요한 기술 중 하나는?",
+   "choices": [
+    "문제를 코드로 빠르게 옮기고 공식 API를 즉시 찾아 적용하는 능력",
+    "수학 증명 능력",
+    "모든 API를 암기하는 능력",
+    "타자 속도만"
+   ],
+   "answerIndex": 0,
+   "explanation": "Open Book이지만 허용 문서만 볼 수 있으므로 문서 검색 훈련이 곧 시험공부입니다.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "보고서 예상문제 110선"
+  },
+  {
+   "id": "Q111",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "TP=40, FP=10, FN=20, TN=130일 때 Precision은?",
+   "choices": [
+    "0.80",
+    "0.85",
+    "0.67",
+    "0.75"
+   ],
+   "answerIndex": 0,
+   "explanation": "40 / (40 + 10) = 0.80",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q112",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "TP=40, FP=10, FN=20, TN=130일 때 Recall은?",
+   "choices": [
+    "약 0.87",
+    "0.75",
+    "0.80",
+    "약 0.67"
+   ],
+   "answerIndex": 3,
+   "explanation": "40 / (40 + 20) ≈ 0.667",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q113",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "TP=40, FP=10, FN=20, TN=130일 때 Accuracy는?",
+   "choices": [
+    "0.90",
+    "0.85",
+    "0.80",
+    "0.65"
+   ],
+   "answerIndex": 1,
+   "explanation": "(40 + 130) / 200 = 0.85",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q114",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "Precision 0.6, Recall 0.4일 때 F1은?",
+   "choices": [
+    "0.48",
+    "0.50",
+    "0.24",
+    "0.52"
+   ],
+   "answerIndex": 0,
+   "explanation": "2 × 0.6 × 0.4 / (0.6 + 0.4) = 0.48",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q115",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "실제 [3, 5, 7], 예측 [2, 5, 9]일 때 MAE는?",
+   "choices": [
+    "3.0",
+    "1.67",
+    "0.67",
+    "1.0"
+   ],
+   "answerIndex": 3,
+   "explanation": "(1 + 0 + 2) / 3 = 1.0",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q116",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "실제 [3, 5, 7], 예측 [2, 5, 9]일 때 MSE는?",
+   "choices": [
+    "약 1.67",
+    "약 1.29",
+    "5.0",
+    "1.0"
+   ],
+   "answerIndex": 0,
+   "explanation": "(1 + 0 + 4) / 3 ≈ 1.667",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q117",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "MSE가 25일 때 RMSE는?",
+   "choices": [
+    "12.5",
+    "2.5",
+    "625",
+    "5"
+   ],
+   "answerIndex": 3,
+   "explanation": "√25 = 5",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q118",
+   "topic": "U06",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "Q1 = 40, Q3 = 60일 때 IQR 이상치 상한은?",
+   "choices": [
+    "70",
+    "90",
+    "80",
+    "100"
+   ],
+   "answerIndex": 1,
+   "explanation": "IQR = 20 → 60 + 1.5 × 20 = 90",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q119",
+   "topic": "U06",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "Q1 = 40, Q3 = 60일 때 IQR 이상치 하한은?",
+   "choices": [
+    "20",
+    "30",
+    "0",
+    "10"
+   ],
+   "answerIndex": 3,
+   "explanation": "40 − 1.5 × 20 = 10",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q120",
+   "topic": "U10",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "환자 50명, 정상 950명인 데이터에서 모두 '정상'으로 예측하면 Accuracy와 Recall은?",
+   "choices": [
+    "Accuracy 0.05, Recall 1",
+    "Accuracy 0.50, Recall 0.50",
+    "Accuracy 0.95, Recall 0.95",
+    "Accuracy 0.95, Recall 0"
+   ],
+   "answerIndex": 3,
+   "explanation": "정상 950명을 맞혀 0.95지만 환자는 한 명도 못 찾습니다(TP = 0).",
+   "sourceIds": [
+    "S13"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q121",
+   "topic": "U09",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "train 데이터 2,000개, batch_size=100, epochs=5이면 가중치 갱신은 몇 번인가?",
+   "choices": [
+    "500번",
+    "20번",
+    "100번",
+    "10,000번"
+   ],
+   "answerIndex": 2,
+   "explanation": "1 epoch = 2000 / 100 = 20번 → 5 epoch = 100번",
+   "sourceIds": [
+    "S16"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q122",
+   "topic": "U07",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "값 [10, 20, 30]을 MinMaxScaler로 변환하면?",
+   "choices": [
+    "[0, 10, 20]",
+    "[0.1, 0.2, 0.3]",
+    "[-1, 0, 1]",
+    "[0, 0.5, 1]"
+   ],
+   "answerIndex": 3,
+   "explanation": "(x − 10) / (30 − 10)",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q123",
+   "topic": "U07",
+   "level": "계산",
+   "type": "single_choice",
+   "question": "평균 50, 표준편차 10인 feature에서 x = 70을 StandardScaler로 변환하면?",
+   "choices": [
+    "0.7",
+    "20",
+    "2.0",
+    "1.4"
+   ],
+   "answerIndex": 2,
+   "explanation": "(70 − 50) / 10 = 2",
+   "sourceIds": [
+    "S12"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q124",
+   "topic": "U05",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "다음 코드의 결과 행 수는? (df는 기본 정수 인덱스 0~99)",
+   "code": "df.loc[0:4]",
+   "choices": [
+    "3행",
+    "4행",
+    "100행",
+    "5행"
+   ],
+   "answerIndex": 3,
+   "explanation": "loc 슬라이스는 끝(4)을 포함하므로 0~4 → 5행. iloc[0:4]라면 4행.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q125",
+   "topic": "U05",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "다음 코드에서 에러가 나는 이유는?",
+   "code": "df[df[\"age\"] >= 30 and df[\"churn\"] == 1]",
+   "choices": [
+    "query를 먼저 호출해야 함",
+    "열 이름에 따옴표가 필요 없음",
+    "pandas 조건 결합에는 and 대신 &를 쓰고 각 조건을 괄호로 감싸야 함",
+    "loc이 아니라 iloc을 써야 함"
+   ],
+   "answerIndex": 2,
+   "explanation": "Series에 and를 쓰면 'truth value of a Series is ambiguous' ValueError.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q126",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "계약 형태(contract)별 이탈률(churn 0/1의 평균)을 구하는 코드는?",
+   "choices": [
+    "df.groupby(\"churn\")[\"contract\"].sum()",
+    "df.groupby(\"contract\")[\"churn\"].mean()",
+    "df[\"contract\"].value_counts()",
+    "df.sort_values(\"contract\").mean()"
+   ],
+   "answerIndex": 1,
+   "explanation": "0/1 열의 평균은 1의 비율입니다.",
+   "sourceIds": [
+    "S22"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q127",
+   "topic": "U05",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "df['churn'].value_counts(normalize=True)의 결과는?",
+   "choices": [
+    "클래스별 비율(합이 1)",
+    "클래스별 개수",
+    "결측 비율",
+    "정규화된 churn 값"
+   ],
+   "answerIndex": 0,
+   "explanation": "normalize=True면 비율로 나옵니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q128",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "다음 코드의 문제점은?",
+   "code": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\nX_train, X_test = train_test_split(X_scaled, test_size=0.2)",
+   "choices": [
+    "fit_transform이라는 메서드가 없음",
+    "split 전에 전체 데이터로 fit해서 test 정보가 누수됨",
+    "test_size가 너무 큼",
+    "StandardScaler는 분류에 쓸 수 없음"
+   ],
+   "answerIndex": 1,
+   "explanation": "split → scaler.fit(X_train) → train/test transform 순서로 고칩니다.",
+   "sourceIds": [
+    "S12",
+    "S14"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q129",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "빈칸에 들어갈 코드로 옳은 것은?",
+   "code": "scaler = StandardScaler()\nX_train_s = scaler.fit_transform(X_train)\nX_test_s = ______",
+   "choices": [
+    "StandardScaler().fit_transform(X_test)",
+    "scaler.fit(X_test)",
+    "scaler.fit_transform(X_test)",
+    "scaler.transform(X_test)"
+   ],
+   "answerIndex": 3,
+   "explanation": "test에는 train으로 학습된 규칙을 적용(transform)만 합니다.",
+   "sourceIds": [
+    "S12"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q130",
+   "topic": "U07",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "monthly_fee 결측을 채우는 올바른 방법은?",
+   "choices": [
+    "전체 데이터의 중앙값으로 채운다",
+    "train은 train 중앙값, test는 test 중앙값으로 채운다",
+    "X_train의 중앙값으로 train과 test를 모두 채운다",
+    "test는 채우지 않는다"
+   ],
+   "answerIndex": 2,
+   "explanation": "대체값도 train에서 학습한 값을 test에 그대로 적용합니다.",
+   "sourceIds": [
+    "S14"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q131",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "train_test_split의 반환 순서로 옳은 것은?",
+   "choices": [
+    "X_train, y_train, X_test, y_test",
+    "y_train, y_test, X_train, X_test",
+    "X_train, X_test, y_train, y_test",
+    "X_test, X_train, y_test, y_train"
+   ],
+   "answerIndex": 2,
+   "explanation": "순서를 틀리면 에러 없이 엉뚱한 결과가 나옵니다.",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q132",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "회귀 문제의 train_test_split에서 보통 쓰지 않는 인자는?",
+   "choices": [
+    "test_size=0.2",
+    "shuffle=True",
+    "random_state=42",
+    "stratify=y"
+   ],
+   "answerIndex": 3,
+   "explanation": "연속값은 클래스 비율을 맞출 수 없으므로 stratify는 분류용입니다.",
+   "sourceIds": [
+    "S11"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q133",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "XGBClassifier에 문자열 범주 열을 그대로 넣으면 보통 어떻게 되는가?",
+   "choices": [
+    "해당 열을 무시함",
+    "에러가 나므로 encoding 후 넣어야 함",
+    "정확도가 올라감",
+    "자동으로 one-hot 됨"
+   ],
+   "answerIndex": 1,
+   "explanation": "수치형으로 바꿔 넣습니다(get_dummies 등).",
+   "sourceIds": [
+    "S18"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q134",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "LogisticRegression 학습 중 ConvergenceWarning이 날 때 흔한 대응은?",
+   "choices": [
+    "random_state를 지움",
+    "predict_proba를 호출",
+    "max_iter를 늘리거나 feature를 scaling",
+    "test_size를 늘림"
+   ],
+   "answerIndex": 2,
+   "explanation": "반복 횟수가 부족하거나 값의 규모 차이가 커서 수렴이 늦은 경우입니다.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q135",
+   "topic": "U08",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "model.predict_proba(X_test)[:, 1]이 뜻하는 것은?",
+   "choices": [
+    "각 샘플이 양성(클래스 1)일 확률",
+    "음성일 확률",
+    "정답 레이블",
+    "예측 클래스"
+   ],
+   "answerIndex": 0,
+   "explanation": "열 0 = 클래스 0 확률, 열 1 = 클래스 1 확률.",
+   "sourceIds": [
+    "S10"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q136",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "회귀 DNN의 출력층으로 알맞은 것은?",
+   "choices": [
+    "Dense(1)",
+    "Dense(2, activation=\"softmax\")",
+    "Dense(1, activation=\"sigmoid\")",
+    "Dense(1, activation=\"relu\")만 가능"
+   ],
+   "answerIndex": 0,
+   "explanation": "회귀는 activation 없이(linear) 출력, loss는 mse.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q137",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "y가 0, 1, 2 정수 라벨인 3클래스 분류의 loss로 알맞은 것은?",
+   "choices": [
+    "mse",
+    "categorical_crossentropy (원-핫 없이)",
+    "sparse_categorical_crossentropy",
+    "binary_crossentropy"
+   ],
+   "answerIndex": 2,
+   "explanation": "정수 라벨 → sparse, 원-핫 라벨 → categorical.",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q138",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Keras 이진분류 모델의 model.predict(X) 결과는?",
+   "choices": [
+    "바로 0/1 클래스",
+    "정확도",
+    "양성 확률(0~1)이라 0.5 등으로 잘라 클래스로 바꿔야 함",
+    "loss 값"
+   ],
+   "answerIndex": 2,
+   "explanation": "(proba >= 0.5).astype(int)",
+   "sourceIds": [
+    "S15"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q139",
+   "topic": "U09",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "EarlyStopping에서 restore_best_weights=True의 효과는?",
+   "choices": [
+    "학습률을 낮춤",
+    "학습을 처음부터 다시 시작",
+    "멈출 때 검증 성능이 가장 좋았던 시점의 가중치로 되돌림",
+    "가중치를 저장 파일로 내보냄"
+   ],
+   "answerIndex": 2,
+   "explanation": "patience만큼 나빠진 가중치 대신 최선의 가중치를 씁니다.",
+   "sourceIds": [
+    "S17"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q140",
+   "topic": "U09",
+   "level": "응용",
+   "type": "single_choice",
+   "question": "딥러닝 입력 데이터를 scaling하면 좋은 이유는?",
+   "choices": [
+    "feature 규모가 비슷해져 학습이 안정적이고 빨라짐",
+    "층 수가 줄어듦",
+    "출력층이 필요 없어짐",
+    "과적합이 완전히 사라짐"
+   ],
+   "answerIndex": 0,
+   "explanation": "트리 모델과 달리 신경망은 값의 크기에 민감합니다.",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q141",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "평균이 중앙값보다 훨씬 큰 분포는 대체로?",
+   "choices": [
+    "오른쪽(큰 값) 꼬리가 긴 분포",
+    "균등 분포",
+    "왼쪽 꼬리가 긴 분포",
+    "완전히 대칭"
+   ],
+   "answerIndex": 0,
+   "explanation": "소수의 아주 큰 값이 평균을 끌어올립니다(양의 왜도).",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q142",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "상관계수가 −0.9인 두 변수의 관계는?",
+   "choices": [
+    "한쪽이 늘면 다른 쪽도 강하게 늘어남",
+    "인과관계가 확실함",
+    "한쪽이 늘면 다른 쪽이 강하게 줄어드는 선형 관계",
+    "관계 없음"
+   ],
+   "answerIndex": 2,
+   "explanation": "부호는 방향, 절댓값은 강도. 상관은 인과가 아닙니다.",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q143",
+   "topic": "U06",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "pandas 2.0 이상에서 문자열 열이 섞인 DataFrame의 상관계수를 구할 때 필요한 인자는?",
+   "choices": [
+    "dropna=True",
+    "axis=1",
+    "method=\"str\"",
+    "numeric_only=True"
+   ],
+   "answerIndex": 3,
+   "explanation": "문자열 열을 빼고 수치열만 계산합니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q144",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "범주형 열의 결측을 채우는 대표값은?",
+   "choices": [
+    "0",
+    "최빈값 df[\"col\"].mode()[0]",
+    "중앙값",
+    "평균"
+   ],
+   "answerIndex": 1,
+   "explanation": "mode()는 Series를 돌려주므로 [0]으로 꺼냅니다.",
+   "sourceIds": [
+    "S06"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q145",
+   "topic": "U07",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "날짜 열에서 월을 꺼내는 코드는?",
+   "choices": [
+    "df.month(\"date\")",
+    "df[\"date\"].month",
+    "df[\"date\"].str.month",
+    "pd.to_datetime(df[\"date\"]).dt.month"
+   ],
+   "answerIndex": 3,
+   "explanation": "datetime으로 바꾼 뒤 .dt 접근자를 씁니다.",
+   "sourceIds": [
+    "S05"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q146",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "2026-10-26 기준, 새로 접수할 수 있는 다음 Associate 정기 회차의 시험일은?",
+   "choices": [
+    "10월 30~31일 (제5회)",
+    "12월 18~19일 (제6회)",
+    "2027년 1월 2일",
+    "11월 23일"
+   ],
+   "answerIndex": 1,
+   "explanation": "제5회 접수는 10월 23일 마감. 제6회 접수 11/23~12/11, 시험 12/18~19, 발표 2027-01-02.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q147",
+   "topic": "U01",
+   "level": "입문",
+   "type": "single_choice",
+   "question": "Associate 시험시간은?",
+   "choices": [
+    "60분",
+    "180분",
+    "90분",
+    "120분"
+   ],
+   "answerIndex": 2,
+   "explanation": "2026년 공식 시험 일정에서 직접 확인되는 값입니다.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q148",
+   "topic": "U01",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "Associate 응시 자격으로 옳은 것은?",
+   "choices": [
+    "Basic 취득자만 응시",
+    "Professional 응시 후 가능",
+    "대학 졸업자만 응시",
+    "각 등급을 독립적으로 응시할 수 있음"
+   ],
+   "answerIndex": 3,
+   "explanation": "단계형 시험이 아닙니다.",
+   "sourceIds": [
+    "S02"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q149",
+   "topic": "U01",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "시험 중 허용되는 7개 공식 문서에 포함되지 않는 것은?",
+   "choices": [
+    "PyTorch",
+    "Seaborn",
+    "Matplotlib",
+    "XGBoost"
+   ],
+   "answerIndex": 0,
+   "explanation": "NumPy·pandas·Matplotlib·Seaborn·scikit-learn·TensorFlow·XGBoost.",
+   "sourceIds": [
+    "S01"
+   ],
+   "origin": "추가 계산·코드 문제"
+  },
+  {
+   "id": "Q150",
+   "topic": "U12",
+   "level": "기본",
+   "type": "single_choice",
+   "question": "14문항·90분 시험의 문항당 평균 시간은 약 몇 분인가?",
+   "choices": [
+    "약 4분",
+    "약 12분",
+    "약 6.4분",
+    "약 9분"
+   ],
+   "answerIndex": 2,
+   "explanation": "90 / 14 ≈ 6.4. 실제로는 EDA를 빨리 끝내고 모델링에 더 씁니다.",
+   "sourceIds": [],
+   "origin": "추가 계산·코드 문제"
+  }
+ ]
+}
