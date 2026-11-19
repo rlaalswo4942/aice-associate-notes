@@ -9,7 +9,7 @@ window.SITE = {
   icon: "🧮",                             // 탭 아이콘(favicon)
   eyebrow: "AICE Associate · Python 실습형 90분",              // 홈 제목 위 작은 글씨 (빈 문자열이면 숨김)
   sub: "Python → NumPy/pandas → EDA → 전처리 → 머신러닝·딥러닝 → 성능평가 → 90분 실전",                        // 홈 제목 아래 설명
-  notice: "기준일 <b>2026-10-26</b>. 다음 정기 회차는 <b>제6회</b>(접수 11/23~12/11 · 시험 12/18~19). 객관식은 <b>연습문제</b>, 14문항 실습형은 <b>모의고사</b>에서 풀어 보세요. 문제는 모두 자체 제작 예상문제이며 기출이 아닙니다.",                             // 홈 상단 안내 상자 (HTML 가능, 빈 문자열이면 숨김)
+  notice: "기준일 <b>2026-11-19</b>. 올해 마지막 정기 회차 <b>제6회</b> 접수 11/23(월)~12/11(금) · 시험 12/18~19 · 2027년 일정은 미공개. Python이 처음이면 <b>U14 파이썬 기초와 용어</b>부터 — 블록을 눌러 넣으면 실행 결과가 나옵니다. 객관식은 <b>연습문제</b>, 14문항 실습형은 <b>모의고사</b>에서 풀어 보세요. 문제는 모두 자체 제작 예상문제이며 기출이 아닙니다.",                             // 홈 상단 안내 상자 (HTML 가능, 빈 문자열이면 숨김)
   key: "aice-associate",                      // ★ 저장 키 — 사이트마다 반드시 다르게 (같은 브라우저·같은 동기화 서버에서 기록이 섞이지 않음)
   syncApi: "https://ai-hackathon-sync.vercel.app/api/state", // 실시간 동기화 API (rlaalswo4942.github.io 에서 열면 그대로 사용 가능, 빈 문자열이면 동기화 메뉴만 안 됨)
   unit: "", unitPrefix: "", unitEn: "UNIT",
@@ -23,7 +23,7 @@ window.SITE = {
     reviewTitle: "한눈에 복습", reviewEn: "전체 정리", reviewDesc: "헷갈리는 짝 · 문제별 metric · 핵심 압축 요약"
   },
   labels: {
-    book: "U01 – U13",                    // 홈 '교재' 제목 옆 작은 글씨
+    book: "U01 – U14",                    // 홈 '교재' 제목 옆 작은 글씨
     extraGroup: "보강 자료", extra: "",
     dictTitle: "용어 사전",
     sources: "출처가 있다는 것은 개념의 근거라는 뜻입니다.",
