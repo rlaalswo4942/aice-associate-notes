@@ -1,23 +1,30 @@
 /* 블록 끼우기 실습 · 돌아가기 버튼 (js/blocks.js — 이 사이트 전용) */
-.bk { margin: 12px 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
-.bk-head { display: flex; align-items: center; gap: 10px; padding: 9px 14px; background: var(--bg); font-size: 14px; }
+/* 상자 높이는 어떤 상태에서도 그대로여야 함 (필기가 섹션 높이 기준 비율로 저장됨) → 결과는 .bk-pop 떠 있는 창 */
+.bk { position: relative; margin: 12px 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.bk-head { border-radius: 14px 14px 0 0; display: flex; align-items: center; gap: 10px; padding: 9px 14px; background: var(--bg); font-size: 14px; }
 .bk-head small { color: var(--sub); flex: 1; }
 .bk-reset { border: 1px solid var(--line); background: var(--panel); border-radius: 980px; padding: 3px 14px; font: inherit; font-size: 13px; cursor: pointer; }
-.notes.md pre.bk-code { margin: 0; border: 0; border-radius: 0; background: var(--panel); padding: 14px 16px; font: 15px/2.1 "D2Coding", Consolas, "Malgun Gothic", monospace; white-space: pre-wrap; }
+.notes.md pre.bk-code { margin: 0; border: 0; border-radius: 0; background: var(--panel); padding: 14px 16px; font: 15px/2.1 "D2Coding", Consolas, "Malgun Gothic", monospace; white-space: pre; overflow-x: auto; scrollbar-width: none; } /* 긴 블록을 넣어도 줄이 꺾이지 않게 */
+.notes.md pre.bk-code::-webkit-scrollbar { display: none; }
 .bk-slot { display: inline-block; min-width: 2.6em; padding: 0 8px; margin: 0 2px; border: 2px dashed #a1a1a6; border-radius: 8px; background: var(--bg); font: inherit; line-height: 1.6; color: var(--sub); cursor: pointer; vertical-align: baseline; }
 .bk-slot.full { border-style: solid; border-color: #c7c7cc; color: var(--ink); background: #ececf0; font-weight: 700; }
 .bk-slot.on { border-color: var(--ink); box-shadow: 0 0 0 2px rgba(29, 29, 31, .15); }
-.bk-pal { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 14px 12px; border-top: 1px solid var(--line); }
+.bk-pal { box-sizing: border-box; overflow: hidden; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 14px 12px; border-top: 1px solid var(--line); }
 .bk-pal span { font-size: 13px; color: var(--sub); margin-right: 2px; }
 .bk-blk { min-height: 40px; padding: 4px 14px; border: 1px solid #c7c7cc; border-radius: 10px; background: var(--panel); font: 15px "D2Coding", Consolas, "Malgun Gothic", monospace; cursor: pointer; box-shadow: 0 1px 0 rgba(0, 0, 0, .06); }
 .bk-blk.on { background: var(--ink); color: #fff; border-color: var(--ink); }
 .bk-out { padding: 10px 14px 12px; border-top: 1px solid var(--line); background: var(--bg); font-size: 14px; }
-.bk-out.wait { color: var(--sub); }
-.bk-out b { display: block; font-size: 13px; margin-bottom: 4px; }
-.bk-out.bad b { color: var(--wrong); }
-.notes.md .bk-out pre { margin: 0; background: #1d1d1f; color: #f5f5f7; border: 0; border-radius: 10px; padding: 10px 12px; font: 15px/1.55 "D2Coding", Consolas, "Malgun Gothic", monospace; white-space: pre-wrap; }
+.bk-out.wait { color: var(--sub); border-radius: 0 0 14px 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-bar { color: var(--ink) !important; font-weight: 600; }
+.bk-bar.show { cursor: pointer; text-decoration: underline; }
+.bk-pop { position: absolute; left: 10px; right: 10px; top: calc(100% - 6px); z-index: 3; padding: 10px 14px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: 0 10px 30px rgba(0, 0, 0, .18); font-size: 14px; }
+.bk-pop-h { display: flex; align-items: center; margin-bottom: 6px; font-size: 13px; }
+.bk-pop-h b { flex: 1; }
+.bk-pop.bad .bk-pop-h b { color: var(--wrong); }
+.bk-x { border: 1px solid var(--line); background: var(--panel); border-radius: 980px; padding: 2px 12px; font: inherit; cursor: pointer; }
+.notes.md .bk-pop pre { margin: 0; background: #1d1d1f; color: #f5f5f7; border: 0; border-radius: 10px; padding: 10px 12px; font: 15px/1.55 "D2Coding", Consolas, "Malgun Gothic", monospace; white-space: pre-wrap; }
 .bk-err { color: #ff8a80; font-weight: 700; }
 .bk-none { color: #a1a1a6; }
-.bk-out ul { margin: 8px 0 0; padding-left: 18px; line-height: 1.7; }
+.bk-pop ul { margin: 8px 0 0; padding-left: 18px; line-height: 1.7; }
 #bk-back { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 40; max-width: calc(100vw - 32px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 10px 20px; border: 0; border-radius: 980px; background: var(--ink); color: #fff; font: inherit; font-size: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, .2); cursor: pointer; }
 #bk-back[hidden] { display: none; }

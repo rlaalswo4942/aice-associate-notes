@@ -37,16 +37,20 @@
     const list = S.cur ? S.opts[S.cur] : [];
     let h = `<div class="bk-head"><b>블록 실습</b><small>${S.names.length > 1 ? "빈칸을 골라 블록을 넣으세요" : "블록을 눌러 빈칸에 넣으세요"}</small><button type="button" class="bk-reset">다시</button></div>
       <pre class="bk-code">${code}</pre>
-      <div class="bk-pal">${S.cur ? `<span>빈칸 ${S.cur}</span>` : ""}${list.map((o, i) => `<button type="button" class="bk-blk${S.pick[S.cur] === o.v ? " on" : ""}" data-i="${i}">${esc(label(o.v))}</button>`).join("")}</div>`;
+      <div class="bk-pal"${S.palH ? ` style="height:${S.palH}px"` : ""}>${S.cur ? `<span>빈칸 ${S.cur}</span>` : ""}${list.map((o, i) => `<button type="button" class="bk-blk${S.pick[S.cur] === o.v ? " on" : ""}" data-i="${i}">${esc(label(o.v))}</button>`).join("")}</div>`;
+    // 필기는 섹션 높이 기준 비율로 저장되므로 상자 높이가 절대 변하면 안 됨:
+    // 아래 줄은 늘 한 줄 그대로, 실행 결과는 상자 아래에 떠 있는 창(높이에 포함 안 됨)으로 표시
     if (done) {
       const key = JSON.stringify(S.names.map(n => S.pick[n]));
       let out = S.out[key], err = "";
       if (out == null) out = "(이 조합은 결과가 준비되지 않았습니다)";
       else if (out[0] === "!") { const ls = out.slice(1).split("\n"); err = ls.pop(); out = ls.join("\n"); }
       const whys = S.names.map(n => S.opts[n].find(o => o.v === S.pick[n])).filter(o => o && o.why).map(o => `<li><code>${esc(label(o.v))}</code> ${esc(o.why)}</li>`).join("");
-      h += `<div class="bk-out${err ? " bad" : ""}"><b>${err ? "실행 결과 · 에러" : "실행 결과"}</b><pre>${esc(out)}${err ? `${out ? "\n" : ""}<span class="bk-err">${esc(err)}</span>` : ""}${!out && !err ? "<span class=\"bk-none\">(출력 없음)</span>" : ""}</pre>${whys ? `<ul>${whys}</ul>` : ""}</div>`;
+      h += `<div class="bk-out wait bk-bar${S.hide ? " show" : ""}">${S.hide ? "실행 결과 다시 보기 ›" : err ? "실행 결과: 에러 — 아래 창 참고" : "실행 결과는 아래 창에 나와요"}</div>`;
+      if (!S.hide) h += `<div class="bk-pop${err ? " bad" : ""}"><div class="bk-pop-h"><b>${err ? "실행 결과 · 에러" : "실행 결과"}</b><button type="button" class="bk-x">닫기</button></div><pre>${esc(out)}${err ? `${out ? "\n" : ""}<span class="bk-err">${esc(err)}</span>` : ""}${!out && !err ? "<span class=\"bk-none\">(출력 없음)</span>" : ""}</pre>${whys ? `<ul>${whys}</ul>` : ""}</div>`;
     } else h += `<div class="bk-out wait">빈칸을 모두 채우면 실행 결과가 나옵니다.</div>`;
     box.innerHTML = h;
+    if (!S.palH) S.palH = box.querySelector(".bk-pal").offsetHeight; // 빈칸마다 블록 줄 수가 달라도 처음 높이로 고정
   }
 
   document.addEventListener("click", e => {
@@ -58,7 +62,10 @@
       else if (blk && S.cur) {
         S.pick[S.cur] = S.opts[S.cur][+blk.dataset.i].v;
         S.cur = S.names.find(n => !(n in S.pick)) || S.cur; // 빈 칸이 남았으면 다음 칸으로
-      } else if (e.target.closest(".bk-reset")) { S.pick = {}; S.cur = S.names[0]; }
+        S.hide = false;
+      } else if (e.target.closest(".bk-reset")) { S.pick = {}; S.cur = S.names[0]; S.hide = false; }
+      else if (e.target.closest(".bk-x")) S.hide = true;
+      else if (e.target.closest(".bk-bar.show")) S.hide = false;
       else return;
       e.stopPropagation();
       draw(box);
