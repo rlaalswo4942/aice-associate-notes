@@ -1193,7 +1193,7 @@ print(round(bmi(__A__), 1))
 square = lambda x: __A__
 print(square(4))
 ===
-{"A": [["x ** 2", "제곱"], ["x ** 0.5", "0.5제곱 = 제곱근"], ["x * 2", "두 배"], ["1 if x >= 65 else 0", "한 줄 if: 65 이상이면 1"]],
+{"A": [["x ** 2", "제곱"], ["x ** 0.5", "0.5제곱 = 제곱근"], ["x * 2", "두 배"], ["1 if x >= 65 else 0", "한 줄 if: 65 이상이면 1, 아니면 0 → 4는 65 미만이라 0"]],
 "out": {"[\"x ** 2\"]": "16", "[\"x ** 0.5\"]": "2.0", "[\"x * 2\"]": "8", "[\"1 if x >= 65 else 0\"]": "0"}}
 ```
 
@@ -1593,7 +1593,7 @@ import pandas as pd
 df = pd.DataFrame({"age": [25, 41, 33, 58, 47], "churn": [0, 1, 0, 1, 0]})
 print(__A__)
 ===
-{"A": [["df[\"age\"]", "열 하나 → Series"], ["df[[\"age\"]]", "대괄호 두 겹 → DataFrame"], ["df.loc[0:2]", "행 이름 0~2, 끝 포함 → 3행"], ["df.iloc[0:2]", "0~1번째 행, 끝 미포함 → 2행"], ["df.loc[1, \"age\"]", "행 이름 1, 열 age"], ["df.iloc[1, 0]", "1번째 행, 0번째 열 (같은 값)"], ["df.iloc[0:2, 1]", "0~1번째 행의 1번째 열(churn)"], ["df[\"Age\"]", "열 이름 대소문자 틀림 → KeyError"]],
+{"A": [["df[\"age\"]", "열 하나 → Series"], ["df[[\"age\"]]", "대괄호 두 겹 → DataFrame"], ["df.loc[0:2]", "행 이름 0~2, 끝 포함 → 3행. 열을 지정하지 않았으니 age·churn 열이 모두 나옴"], ["df.iloc[0:2]", "0~1번째 행, 끝 미포함 → 2행 (열은 모두)"], ["df.loc[1, \"age\"]", "행 이름 1, 열 age"], ["df.iloc[1, 0]", "1번째 행, 0번째 열 (같은 값)"], ["df.iloc[0:2, 1]", "0~1번째 행의 1번째 열(churn)"], ["df[\"Age\"]", "열 이름 대소문자 틀림 → KeyError"]],
 "out": {"[\"df[\\\"age\\\"]\"]": "0    25\n1    41\n2    33\n3    58\n4    47\nName: age, dtype: int64", "[\"df[[\\\"age\\\"]]\"]": "   age\n0   25\n1   41\n2   33\n3   58\n4   47", "[\"df.loc[0:2]\"]": "   age  churn\n0   25      0\n1   41      1\n2   33      0", "[\"df.iloc[0:2]\"]": "   age  churn\n0   25      0\n1   41      1", "[\"df.loc[1, \\\"age\\\"]\"]": "41", "[\"df.iloc[1, 0]\"]": "41", "[\"df.iloc[0:2, 1]\"]": "0    0\n1    1\nName: churn, dtype: int64", "[\"df[\\\"Age\\\"]\"]": "!KeyError: 'Age'"}}
 ```
 
@@ -1634,7 +1634,7 @@ import pandas as pd
 df = pd.DataFrame({"age": [25, 41, 33, 58], "contract": ["month", "two_year", "month", "one_year"]})
 print(__A__)
 ===
-{"A": [["df[\"age\"] >= 30", "행마다 True/False (필터 전 모습)"], ["df[df[\"age\"] >= 30]", "True인 행만"], ["df[(df[\"age\"] >= 30) & (df[\"contract\"] == \"month\")]", "두 조건 모두"], ["df[(df[\"age\"] < 30) | (df[\"age\"] > 50)]", "둘 중 하나"], ["df[~(df[\"contract\"] == \"month\")]", "month가 아닌 행"], ["df[df[\"contract\"].isin([\"one_year\", \"two_year\"])]", "목록 안의 값"], ["df[(df[\"age\"] >= 30) and (df[\"contract\"] == \"month\")]", "and를 쓰면 → ValueError"]],
+{"A": [["df[\"age\"] >= 30", "행마다 True/False (필터 전 모습)"], ["df[df[\"age\"] >= 30]", "True인 행만. 조건에는 age만 썼지만 조건은 남길 '행'만 고르고 열은 모두 남기므로 contract 열도 함께 나옴"], ["df[(df[\"age\"] >= 30) & (df[\"contract\"] == \"month\")]", "두 조건 모두 참인 행만 (열은 모두 남음)"], ["df[(df[\"age\"] < 30) | (df[\"age\"] > 50)]", "둘 중 하나"], ["df[~(df[\"contract\"] == \"month\")]", "month가 아닌 행"], ["df[df[\"contract\"].isin([\"one_year\", \"two_year\"])]", "목록 안의 값"], ["df[(df[\"age\"] >= 30) and (df[\"contract\"] == \"month\")]", "and를 쓰면 → ValueError"]],
 "out": {"[\"df[\\\"age\\\"] >= 30\"]": "0    False\n1     True\n2     True\n3     True\nName: age, dtype: bool", "[\"df[df[\\\"age\\\"] >= 30]\"]": "   age  contract\n1   41  two_year\n2   33     month\n3   58  one_year", "[\"df[(df[\\\"age\\\"] >= 30) & (df[\\\"contract\\\"] == \\\"month\\\")]\"]": "   age contract\n2   33    month", "[\"df[(df[\\\"age\\\"] < 30) | (df[\\\"age\\\"] > 50)]\"]": "   age  contract\n0   25     month\n3   58  one_year", "[\"df[~(df[\\\"contract\\\"] == \\\"month\\\")]\"]": "   age  contract\n1   41  two_year\n3   58  one_year", "[\"df[df[\\\"contract\\\"].isin([\\\"one_year\\\", \\\"two_year\\\"])]\"]": "   age  contract\n1   41  two_year\n3   58  one_year", "[\"df[(df[\\\"age\\\"] >= 30) and (df[\\\"contract\\\"] == \\\"month\\\")]\"]": "!ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."}}
 ```
 
@@ -1753,7 +1753,7 @@ df = pd.DataFrame({"age": [70, 34, 66, 25]})
 df["senior"] = df["age"].apply(lambda x: __A__)
 print(df)
 ===
-{"A": [["1 if x >= 65 else 0", "65 이상이면 1"], ["\"시니어\" if x >= 65 else \"일반\"", "글자로 표시"], ["x // 10 * 10", "연령대 (70 → 70, 34 → 30)"], ["x >= 65", "True/False 그대로"]],
+{"A": [["1 if x >= 65 else 0", "65 이상이면 1. lambda의 x에는 age 값이 하나씩 들어가고(70 → 1, 34 → 0), 그 결과가 새 열 senior가 됨. print(df)는 표 전체를 보여 주므로 원래 age 열과 새 senior 열이 함께 나옴"], ["\"시니어\" if x >= 65 else \"일반\"", "글자로 표시. 계산에 쓴 건 age 하나지만 print(df)라서 age·senior 두 열이 다 보임"], ["x // 10 * 10", "연령대 (70 → 70, 34 → 30). senior 열에 연령대가 들어감 — 열 이름은 코드에 쓴 senior 그대로"], ["x >= 65", "비교 결과 True/False가 그대로 senior 열에 들어감"]],
 "out": {"[\"1 if x >= 65 else 0\"]": "   age  senior\n0   70       1\n1   34       0\n2   66       1\n3   25       0", "[\"\\\"시니어\\\" if x >= 65 else \\\"일반\\\"\"]": "   age senior\n0   70    시니어\n1   34     일반\n2   66    시니어\n3   25     일반", "[\"x // 10 * 10\"]": "   age  senior\n0   70      70\n1   34      30\n2   66      60\n3   25      20", "[\"x >= 65\"]": "   age  senior\n0   70    True\n1   34   False\n2   66    True\n3   25   False"}}
 ```
 
@@ -2286,8 +2286,8 @@ print("xgb", round(accuracy_score(y_test, pred), 3), round(f1_score(y_test, pred
 
 ```python
 m = models["logistic"]
-print(m.predict(X_test[:5]))          # [0 0 1 0 0]  결정된 클래스
-proba = m.predict_proba(X_test[:5])   # [[0.8, 0.2], ...]  클래스별 확률
+print(m.predict(X_test[:5]))          # [0 1 0 0 1]  결정된 클래스
+proba = m.predict_proba(X_test[:5])   # [[0.89, 0.11], ...]  클래스별 확률
 print(proba[:, 1])                    # 양성(1)일 확률
 
 pred_03 = (m.predict_proba(X_test)[:, 1] >= 0.3).astype(int)   # threshold 0.3
